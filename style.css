@@ -1,57 +1,339 @@
-:root{
-    --backgroundColor : #0a192f;
+:root {
+    --backgroundColor: #0a192f;
     --fontForMobile: 26px;
     --fontForWeb: 36px;
     --fontForMobileP: 16px;
-    --fontForWebP:16px;
+    --fontForWebP: 16px;
+    --greenColor: #64ffda;
+    --navColor: #112240;
+    --colorParag: #8892b0;
+    --fontForPar: 'Poppins';
 }
-body{
+
+body {
     background-color: #0a192f;
     margin: 0;
 }
+
+h1 {
+    font-family: 'Algerian';
+    color: aliceblue;
+    font-size: 28px;
+    margin: 0;
+}
+h4{
+    color: var(--greenColor);
+    font-family: 'aharoni';
+    font-size: 18px;
+
+}
 h1{
-    font-size: var(--fontForMobile);
-    color: red
+    font-family: 'Algerian';
+    color: aliceblue;
+    font-size: 28px;
+    margin: 0;
 }
-p{
-    font-size: var(--fontForMobileP);
+
+p {
+    color: var(--colorParag);
+    font-family: 'Poppins';
+    font-size: 19px;
 }
-nav{
+span{
+    color: var(--greenColor);
+}
+li{
+    font-family: 'Poppins';
+    color: aliceblue;
+}
+a{
+    color: #e6f1ff;
+}
+
+nav {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    position: relative;
+    align-items: center;
 }
-#navForMobile{
-    display: none;
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-#btnForMobile{
+
+.logo {
     width: 40px;
-    height: 60px;
+    height: 40px;
+    background-image: url(./img/akLogo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 15px;
+
 }
-.shortLine{
+
+.navForMobile {
+    position: absolute;
+    right: 0;
+    top: 0%;
+    z-index: 5;
+    width: 70%;
+    background-color: var(--navColor);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+ 
+}
+.navForMobileAni{
+    animation: navForMobileAni 1s ease-in-out 0s 1 alternate;
+}
+@keyframes navForMobileAni {
+    from {
+        margin-right: -100%;
+    }to {
+        margin-right:0%;
+    }
+}
+.navForMobileAniBack{
+    animation: navForMobileAniBack 1s ease-in-out 0s 1 alternate;
+}
+@keyframes navForMobileAniBack {
+    from {
+        margin-right: 0%;
+    }to {
+        margin-right: -100%;
+    }
+}
+#btnForMobile {
+  z-index: 10;
+    width: 40px;
+    height: 20px;
+    margin: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 15px;
+}
+#btnForMobile div {
+    background-color: var(--greenColor);
+    border-radius: 30px;
+    height: 3px;
+    position: absolute;
+}
+.shortLine {
+    width: 50%;
+    top: 100%;
+}
+.shortLineAni{
+    animation: shortLineBtn 1s ease 0s 1 alternate;
+}
+@keyframes shortLineBtn {
+    from {
+        top: 100%;
+        background-color: var(--greenColor);
+    }to {
+        top: 50%;
+        width: 70%;
+    }
+}
+.middleLine {
+    width: 70%;
+    top: 50%;
+}
+.longLine {
+    width: 90%;
+    top: 0%;
+}
+.longLineAni {
+    animation: longLineBtn 1s ease 0s 1 alternate;
+}
+.show{
+    display: block;
+}
+@keyframes longLineBtn {
+    from {
+        top: 0%;
+        background-color: var(--greenColor);
+    }to {
+        background-color: #0a192f;
+        top: 50%;
+        width: 70%;
+    }
+}
+.longLineAni2 {
+    animation: longLine2Btn 1s ease 0s 1 alternate-reverse;
+}
+
+@keyframes longLine2Btn {
+    from {
+        top: 0%;
+        background-color: var(--greenColor);
+    }to {
+        background-color: var(--greenColor);
+        top: 50%;
+        width: 70%;
+    }
+}
+.shortLineAni2{
+    animation: shortLine2Btn 1s ease 0s 1 alternate-reverse;
+}
+
+@keyframes shortLine2Btn {
+    from {
+        top: 100%;
+        background-color: var(--greenColor);
+    }to {
+        top: 50%;
+        width: 70%;
+    }
+}
+.navBarLinks{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.navBarLinks h3{
+    margin: 2px;
+    color: var(--greenColor);
+}
+
+.blurMain{
+    background-color: transparent;
+    opacity: 0.5;
+    backdrop-filter: blur(1.5rem);
+}
+#greeting{
+    width: 80%;
+    height: 100vh;
+    padding: 25px;
+    position: relative;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 10px;
+}
+.motive{
+    font-family: 'Algerian';
+    color: var(--colorParag);
+}
+.btn{
+ background-color: transparent;
+ padding: 10px 14px;
+ width: 50%;
+ color: var(--greenColor);
+ font-size: 15px;
+ border-color: var(--greenColor);
+
+}
+#aboutMe{
+    width: 90%;
+    height: 100vh;
+    padding: 20px;
+}
+.lineAfterHeader{
     width: 100%;
-    height: 5px;
-    color: green;
+    height: 2px;
+    background-color: var(--colorParag);
+    opacity: 0.3;
+}
+#aboutMe p{
+    font-size: 18px;
+}
+
+.listOfSkills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+.listOfSkills li{
+    width: 40%;
+    margin: 10px;
+}
+#profilePictureDiv{
+    position: relative;
+    width: 60%;
+    display: flex;
+    margin: auto;
+}
+#profilePictureDiv img{
+    width: 100%;
     
 }
-.middleLine{
-
+.imgFrame{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-style: groove;
+    border-radius: 5px;
+    border-color: var(--greenColor);
+    top: 5%;
+    left: 5%;
+    z-index: -10;
 }
-.longLine{
-
+.imgOpacity{
+    width: 100%;
+    height: 100%;
+    background-color: var(--greenColor);
+    position: absolute;
+    top: 0%;
+    opacity: 0.3;
 }
-
-
-
-@media(min-width:600px){
+#projects{
+    width: 90%;
+    height: 100vh;
+}
+#certificate{
+    width: 90%;
+    height: 100vh;
     
-    h1{
+}
+.skillLevel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.skillLevel h3{
+    color: var(--greenColor);
+}
+.skillsz{
+    margin: 30px;
+}
+.skillsz li{
+    margin-bottom: 10px;
+}
+.certificateBtn{
+    height: auto;
+    font-size: 14px;
+    padding: 5px;
+    margin: 5px;
+}
+#advanced{
+    margin-bottom: 1200px;
+    
+}
+#getInTouch{
+    width: 90%;
+    position: relative;
+    margin-top: 300px
+}
+@media(min-width:600px) {
+
+    h1 {
         font-size: var(--fontForWeb);
         color: antiquewhite;
     }
-    p{
+
+    p {
         font-size: var(--fontForWebP);
     }
-    
+
 }

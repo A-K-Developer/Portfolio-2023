@@ -6,57 +6,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A K Developer</title>
     <link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
     <nav>
         
-        <img src="" alt="">
-        <div id="navForMobile">
-            <a href="">About</a>
-            <a href="">Experience</a>
-            <a href="">Work</a>
-            <a href="">Contact</a>
-            <button>Resume</button>
-        </div>
+        <div class="logo"></div>
+        
         <div id="btnForMobile">
             <div class="longLine"></div>
             <div class="middleLine"></div>
             <div class="shortLine"></div>
         </div>
     </nav>
+   
     <main>
         <section id="greeting">
-            <div><h1>Hi, my name is</h1></div>
-            <div><h1>Asen Krushkov.</h1></div>
+            <div><h4>Hi, my name is</h4></div>
+            <div class="myName"><h1>Asen Krushkov.</h1></div>
+            <h1 class="motive">I build things for the web.</h1>
             <div><p>I'm a student from Zealand in Køge. Currently,I'm looking for Intership.</p></div>
-            <button>Check my work</button>
+            <button class="btn">Check my work</button>
         </section>
         <section id="aboutMe">
-            <p></p>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <div class="header headerAboutMe">
+                <h1> <span>I.</span> About Me</h1><div></div>
+            </div>
+
+            <p>I'm currently a worker in costumer service
+                sphere.
+                I am an enthusiastic, self-motivated,
+                reliable, responsible and hard working
+                person. I am a mature team worker and
+                adaptable to all challenging situations. I am
+                able to work well both in a team
+                environment as well as using own initiative.</p>
+            <ul class="listOfSkills">
+                <li class="skills">JavaScript</li>
+                <li class="skills">HTML</li>
+                <li class="skills">CSS</li>
+                <li class="skills">WordPress</li>
+                <li class="skills">Node.js</li>
+                <li class="skills">JQuery</li>
             </ul>
+            <div id="profilePictureDiv">
+                <img src="./img/Asen.png" alt="My profile picture">
+                <div class="imgFrame"></div>
+                <div class="imgOpacity"></div>
+            </div>
         </section>
-        <section id="Projects">
-
+        <section id="projects">
+            <div class="header headerForProject">
+                <h1><span>II.</span> Projects I've Worked</h1><div></div>
+            </div>
+            <div id="projectsList">
+                
+                <div class="projects">1st Project</div>
+                <div class="projects">2nd Project</div>
+                <div class="projects">3rd Project</div>
+            </div>
+            <div class="lineUnder"></div>
+            <div id="contentForProject"></div>
         </section>
-        <section id="sertificat">
-
+        <section id="certificate">
+            <div class="header headerCertificate">
+                <h1><span>III.</span> Certificate</h1><div></div>
+            </div>
+            <section id="basicJS">
+                <div class="skillLevel">
+                    <h3>Basic</h3>
+                    <button id="basicPdf" class="btn certificateBtn">Certificate.PDF</button>
+                </div>
+                    <div class="skillsz">
+                        <li>Working with the console(login and data output)</li>
+                        <li>Work with cycles(for)</li>
+                        <li>Working with more complex logical checks</li>
+                        <li>Work with logical checks (if-else)</li>
+                        <li>Perform simple calculations</li>
+                        <li>Working with more complex cycles (nested for cycles and while) </li>
+                    </div>
+            </section>
+            <section id="Fundamentals">
+                <div class="skillLevel">
+                    <h3>Fundamentals</h3>
+                    <button id="fundamentalsPdf" class="btn certificateBtn">Certificate.PDF</button>
+                </div>
+                <div class="skillsz">
+                    <li>Handling the standard functionality of the programming language</li>
+                    <li>Web Development Basics</li>
+                    <li>Understanding the relationship between different IT concepts</li>
+                    <li>Analysis of complex problems and reduction to computer-executable steps</li>
+                    <li>Basic skills for working with HTML and CSS</li>
+                    <li>Work with linear data structures</li>
+                </div>
+            </section>
+            <section id="advanced">
+                <div class="skillLevel">
+                    <h3>Advanced</h3>
+                    <button id="advancedPdf" class="btn certificateBtn">Certificate.PDF</button>
+                </div>
+                <div class="skillsz">
+                    <li>Work with classes and objects</li>
+                    <li>Work with features and JSON formats</li>
+                    <li>Working with linear structures</li>
+                    <li>Retrieving information and manipulating the DOM tree</li>
+                    <li>Object-oriented programming</li>
+                    <li>Functional programming</li>
+                </div>
+                
+            </section>
         </section>
         <section id="getInTouch">
-
+            <div class="header headerForGetInTouch">
+                <h1><span>IV. What's Next?</span> <br> Get in Touch</h1><div></div>
+            </div>
+            <p>If you are looking for interms or even part time worker? Then hit the button bellow.
+                But even if you just want to say hi u can feel free to do so. I'll try my best to get back to you!
+            </p>
         </section>
+        <div id="socialNetwork">
+            <!-- Github , Insta , Tweeter, LinkIn-->
+            <div class="vertical-line"></div>
+        </div>
+        <div id="email">
+            <h5>krushkov1914@gmail.com</h5>
+        </div>
     </main>
-    <div id="socialNetwork">
-        <!-- Github , Insta , Tweeter, LinkIn-->
-        <div class="vertical-line"></div>
-    </div>
-    <div id="email">
-        <h5>krushkov1914@gmail.com</h5>
-    </div>
+    
+    <script src="app.js"></script>
 </body>
 </html>
