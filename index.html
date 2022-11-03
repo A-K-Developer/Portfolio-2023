@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,29 +9,37 @@
     <link rel="stylesheet" href="./style.css">
 
 </head>
+
 <body>
     <nav>
-        
+
         <div class="logo"></div>
-        
+
         <div id="btnForMobile">
             <div class="longLine"></div>
             <div class="middleLine"></div>
             <div class="shortLine"></div>
         </div>
     </nav>
-   
+
     <main>
         <section id="greeting">
-            <div><h4>Hi, my name is</h4></div>
-            <div class="myName"><h1>Asen Krushkov.</h1></div>
+            <div>
+                <h4>Hi, my name is</h4>
+            </div>
+            <div class="myName">
+                <h1>Asen Krushkov.</h1>
+            </div>
             <h1 class="motive">I build things for the web.</h1>
-            <div><p>I'm a student from Zealand in Køge. Currently,I'm looking for Intership.</p></div>
+            <div>
+                <p>I'm a student from Zealand in Køge. Currently,I'm looking for Intership.</p>
+            </div>
             <button class="btn">Check my work</button>
         </section>
         <section id="aboutMe">
             <div class="header headerAboutMe">
-                <h1> <span>I.</span> About Me</h1><div></div>
+                <h1> <span>I.</span> About Me</h1>
+                <div></div>
             </div>
 
             <p>I'm currently a worker in costumer service
@@ -57,82 +66,99 @@
         </section>
         <section id="projects">
             <div class="header headerForProject">
-                <h1><span>II.</span> Projects I've Worked</h1><div></div>
+                <h1><span>II.</span> Projects I've Worked</h1>
+                <div></div>
             </div>
             <div id="projectsList">
-                
                 <div class="projects">1st Project</div>
                 <div class="projects">2nd Project</div>
                 <div class="projects">3rd Project</div>
             </div>
-            <div class="lineUnder"></div>
+            <div class="lineUnder">
+                <div class="left"></div>
+                <div class="middle"></div>
+                <div class="right"></div>
+            </div>
             <div id="contentForProject"></div>
         </section>
         <section id="certificate">
             <div class="header headerCertificate">
-                <h1><span>III.</span> Certificate</h1><div></div>
+                <h1><span>III.</span> Certificate</h1>
+                <div></div>
             </div>
-            <section id="basicJS">
+            <section id="basicJS" class="certificateContainer">
                 <div class="skillLevel">
                     <h3>Basic</h3>
-                    <button id="basicPdf" class="btn certificateBtn">Certificate.PDF</button>
+                    <img id="basicPdf" src="./img/certificate.png" alt="certificatemiss">
                 </div>
-                    <div class="skillsz">
-                        <li>Working with the console(login and data output)</li>
-                        <li>Work with cycles(for)</li>
-                        <li>Working with more complex logical checks</li>
-                        <li>Work with logical checks (if-else)</li>
-                        <li>Perform simple calculations</li>
-                        <li>Working with more complex cycles (nested for cycles and while) </li>
-                    </div>
+                <ul class="skillsz">
+                    <li>Working with the console <br>(<span> login</span> and <span>data </span>output )</li>
+                    <li>Work with cycles <br>(<span>for</span>)</li>
+                    <li>Working with more complex logical <span>checks</span></li>
+                    <li>Work with logical checks <br>( <span>if-else</span> )</li>
+                    <li>Perform simple calculations</li>
+                    <li>Working with more complex cycles <br>( <span>nested</span> for cycles and <span>while</span> )
+                    </li>
+                </ul>
             </section>
-            <section id="Fundamentals">
+            <section id="Fundamentals" class="certificateContainer">
                 <div class="skillLevel">
                     <h3>Fundamentals</h3>
-                    <button id="fundamentalsPdf" class="btn certificateBtn">Certificate.PDF</button>
+                    <img id="fundamentalsPdf" src="./img/certificate.png" alt="certificatemiss">
                 </div>
-                <div class="skillsz">
-                    <li>Handling the standard functionality of the programming language</li>
-                    <li>Web Development Basics</li>
-                    <li>Understanding the relationship between different IT concepts</li>
-                    <li>Analysis of complex problems and reduction to computer-executable steps</li>
-                    <li>Basic skills for working with HTML and CSS</li>
-                    <li>Work with linear data structures</li>
-                </div>
+                <ul class="skillsz">
+                    <li>Handling the standard <span>functionality</span> of the programming language</li>
+                    <li>Web Development <span>Basics</span></li>
+                    <li>Understanding the relationship between different <span>IT</span> concepts</li>
+                    <li>Analysis of complex problems and reduction to <span>computer-executable</span> steps</li>
+                    <li>Basic skills for working with <span>HTML</span> and <span>CSS</span></li>
+                    <li>Work with linear <span>data</span> structures</li>
+                </ul>
             </section>
-            <section id="advanced">
+            <section id="advanced" class="certificateContainer">
                 <div class="skillLevel">
                     <h3>Advanced</h3>
-                    <button id="advancedPdf" class="btn certificateBtn">Certificate.PDF</button>
+                    <img id="advancedPdf" src="./img/certificate.png" alt="certificatemiss">
                 </div>
-                <div class="skillsz">
-                    <li>Work with classes and objects</li>
-                    <li>Work with features and JSON formats</li>
-                    <li>Working with linear structures</li>
-                    <li>Retrieving information and manipulating the DOM tree</li>
-                    <li>Object-oriented programming</li>
-                    <li>Functional programming</li>
-                </div>
-                
+                <ul class="skillsz">
+                    <li>Work with <span>classes</span> and <span>objects</span></li>
+                    <li>Work with features and <span>JSON</span> formats</li>
+                    <li>Working with <span>linear</span> structures</li>
+                    <li>Retrieving information and manipulating the <span>DOM</span> tree</li>
+                    <li><span>Object-oriented</span> programming</li>
+                    <li><span>Functional</span> programming</li>
+                    
+                </ul>
+
             </section>
         </section>
         <section id="getInTouch">
             <div class="header headerForGetInTouch">
-                <h1><span>IV. What's Next?</span> <br> Get in Touch</h1><div></div>
+                <h1><span>IV. What's Next?</span> <br> Get in Touch</h1>
+                <div></div>
             </div>
             <p>If you are looking for interms or even part time worker? Then hit the button bellow.
                 But even if you just want to say hi u can feel free to do so. I'll try my best to get back to you!
             </p>
-        </section>
-        <div id="socialNetwork">
+            <div id="sendEmail">
+                <button id='sayHelloBtn' class="btn sayHello"><a href="mailto:krushkov1914@gmail.com">Say Hello</a></button>
+            </div>
+
+
             <!-- Github , Insta , Tweeter, LinkIn-->
-            <div class="vertical-line"></div>
-        </div>
-        <div id="email">
-            <h5>krushkov1914@gmail.com</h5>
-        </div>
+            <section id="socialContainer">
+                <img src="./img/github-sign.png" alt="github missing">
+                <img src="./img/instagram.png" alt="instagram missing">
+                <img src="./img/linkedin.png" alt="linked in missing ">
+                <img src="./img/facebook.png" alt="facebook missing">
+            </section>
+
+            <p>Designed & Build by <br> Asen Krushkov</p>
+
+        </section>
     </main>
-    
+
     <script src="app.js"></script>
 </body>
+
 </html>

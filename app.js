@@ -134,3 +134,31 @@ function putLineAfterHeader(){
     })
 }
 putLineAfterHeader();
+
+let projects = document.getElementsByClassName('projects');
+    projects[0].addEventListener('click',createFirstProject)
+    projects[1].addEventListener('click',createSecondProject)
+    projects[2].addEventListener('click',createThirthProject);
+
+let main = document.getElementById('contentForProject');
+let lineClass = document.getElementsByClassName('lineUnder')[0];
+let left = lineClass.querySelector('.left');
+let right = lineClass.querySelector('.right');
+let middle = lineClass.querySelector('.middle');
+
+function createFirstProject(){
+    left.style.width = '0%';
+    middle.style.width = '30%'
+    right.style.width = '70%';
+}
+function createSecondProject(){
+    left.style.width = '33.33%';
+    middle.style.width= '33.33%'
+    right.style.width = '33.33%';
+
+}
+function createThirthProject(){
+    left.style.width = '70%';
+    middle.style.width = '30%'
+    right.style.width = '0';
+}
