@@ -37,7 +37,7 @@ h1{
 p {
     color: var(--colorParag);
     font-family: 'Poppins';
-    font-size: 19px;
+    font-size: 15px;
 }
 span{
     color: var(--greenColor);
@@ -63,6 +63,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 100px;
 }
 
 .logo {
@@ -213,7 +214,7 @@ main{
     height: 100vh;
     padding: 25px;
     position: relative;
-    top: 200px;
+    top: 100px;
     display: flex;
     flex-direction: column;
     text-align: start;
@@ -290,6 +291,7 @@ main{
 #projects{
     width: 90%;
     height: 100vh;
+    font-size: 15px;
 }
 #projectsList{
     display: flex;
@@ -300,6 +302,7 @@ main{
     font-weight: bold;
 
 }
+
 .lineUnder{
     width: 100%;
     height: 2px;
@@ -327,13 +330,79 @@ main{
     height: 100vh;
     
 }
+.projectContainer{
+    z-index: 10;
+    background-color: #0a192f;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    top: 0px;
+    max-height: 72px;
+    overflow: scroll;
+    box-shadow: 2px 2px 5px #002760;
+}
+.projectContainer h3{
+    color: var(--greenColor);
+    margin: 5px;
+    font-size: 14px;
+}
+.projectContainer ol{
+    
+}
+.projectContainer ol li{
+    color: var(--colorParag);
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.projectContainer ol li::marker{
+    color: var(--greenColor);
+}
+.scrollDownBaby{
+    background-image: url(./img/scroll.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 5%;
+    top: 55%;
 
+}
+#contentForProject{
+    position: relative;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+}
+.iconForProject{
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    
+}
+.video{
+    margin-top: 22px;
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    top: 0%;
+    z-index: -10;
+    
+}
+.btnForProjects{
+    width: 190px;
+    padding: 5px 20px;
+    position: relative;
+    margin: auto;
+    margin-top: 5px;
+}
 .certificateContainer{
-    margin: 20px;
+    margin: 50px 0px;
     box-shadow: 2px 2px 5px #002760;
     padding: 20px;
-    margin-bottom: 100px;
-    margin-top: 75px;
 }
 .skillLevel{
     display: flex;
@@ -356,7 +425,6 @@ main{
     font-size: 20px;
     list-style: circle outside;
     margin: 0;
-    padding: 20px;
     
     
 }
@@ -381,7 +449,7 @@ main{
 #getInTouch{
     width: 90%;
     position: relative;
-    margin-top: 1100px;
+    margin-top: 800px;
     text-align: center;
     display: flex;
     flex-direction: column;

@@ -1,3 +1,5 @@
+import {html, render} from 'https://unpkg.com/lit-html?module';
+
 let btnForMobile = document.getElementById('btnForMobile');
 btnForMobile.addEventListener('click', btnFunc);
 
@@ -91,6 +93,7 @@ function createNavBarMenu() {
 
 }
 let i = 0;
+let hash = [];
 
 function changeColor() {
     let containerClass = 'skills'
@@ -145,20 +148,122 @@ let lineClass = document.getElementsByClassName('lineUnder')[0];
 let left = lineClass.querySelector('.left');
 let right = lineClass.querySelector('.right');
 let middle = lineClass.querySelector('.middle');
+let video = main.querySelectorAll('.video');
+
 
 function createFirstProject(){
     left.style.width = '0%';
     middle.style.width = '30%'
     right.style.width = '70%';
+
+    let div = main.querySelector('div');
+    let video = main.querySelector('video')
+    
+    if(div){
+        main.removeChild(div);
+        main.removeChild(video);
+        
+    }
+    let arr= ['Navigation App for Køge','','Only Mobile Version Website','Everything is coded by me','100% Vanila Javascript','','','']
+    //createBtn(main)
+    projectTemplate(arr,main)
+    createVideo(main,'./img/KogeMap.mp4')
+    let icon = main.querySelector('.iconForProject');
+    icon.addEventListener('click', ()=>{
+        window.location.href = 'https://a-k-developer.github.io/KogeMap/'
+    })
 }
 function createSecondProject(){
     left.style.width = '33.33%';
     middle.style.width= '33.33%'
     right.style.width = '33.33%';
 
+    let div = main.querySelector('div');
+    let video = main.querySelector('video')
+    
+    if(div){
+        
+        main.removeChild(div);
+        main.removeChild(video)
+    }
+    let arr= ['Restaurant website','03/05.2022','Web and Mobile version','Everything is coded by me','100% Vanila Javascript','100% Vanila CSS ','Menu for Restaurant;','Design is not my work!']
+    //createBtn(main)
+    projectTemplate(arr,main)
+    createVideo(main,'./img/DistrictTonkinMobile.mp4')
+    
+    let icon = main.querySelector('.iconForProject');
+    icon.addEventListener('click', ()=>{
+        window.location.href = 'https://a-k-developer.github.io/District-Tonkin/'
+    })
+    
 }
 function createThirthProject(){
     left.style.width = '70%';
     middle.style.width = '30%'
     right.style.width = '0';
+    
+    let div = main.querySelector('div');
+    let video = main.querySelector('video')
+    let btn = main.querySelector('button');
+    if(div){
+        
+        main.removeChild(video)
+        main.removeChild(div);
+    }
+    let arr= ['Guide for internation App','09/10.2022','Mobile Version Only','Everything is coded by me','Vanilla JS - CSS','I used Firefox to storage data','I cover all CRUD operation in this project','Login Register Logout system','Only using page.js and lit-html','Design is not my work!']
+    
+    projectTemplate(arr,main)
+    createVideo(main,'./img/Survival-guideVideo.mp4')
+    //createBtn(main);
+    let icon = main.querySelector('.iconForProject');
+    icon.addEventListener('click', ()=>{
+        window.location.href = ' https://a-k-developer.github.io/Survival-Guide/'
+    })
+
+}
+
+
+
+function createVideo(container,videopath){
+    let source = document.createElement('video');
+
+    source.setAttribute('src',videopath);
+    source.setAttribute('type','video/mp4');
+    source.classList.add('video')
+    source.play()
+    container.appendChild(source)
+    
+}
+
+
+function projectTemplate(arr,main){
+    let container = document.createElement('div');
+    let h3 = document.createElement('h3');
+    let icon = document.createElement('img');
+    let scrollDownBtn = document.createElement('div');
+    
+    icon.setAttribute('src','./img/share.png')
+    container.classList.add('projectContainer')
+    icon.classList.add('iconForProject')
+    scrollDownBtn.classList.add('scrollDownBaby');
+    
+    h3.textContent = arr.shift();
+    
+
+    let ol = document.createElement('ol');
+    arr.forEach(x => {
+        if(x !== ''){
+
+            let li = document.createElement('li');
+            li.textContent = x;
+            ol.append(li)
+        }
+    })
+
+    container.append(h3)
+    container.append(scrollDownBtn)
+    container.append(icon)
+    container.append(ol);
+    main.append(container)
+    
 }
