@@ -18,6 +18,7 @@ function btnFunc(arg) {
 
     if (showNav == null) {
         createNavBarMenu();
+        nav.classList.add('btnFixed')
     }
     if (longLine.style.display == 'none') {
         window.innerHeight = '844px'
@@ -64,16 +65,23 @@ function createNavBtn(){
     let longLine = document.createElement('div')
     let middleLine = document.createElement('div')
     let shortLine = document.createElement('div')
+    let logo = document.createElement('div');
     let nav = document.getElementsByTagName('nav')[0];
+
     longLine.classList.add('longLine');
     shortLine.classList.add('shortLine');
     middleLine.classList.add('middleLine');
-    console.log(nav);
+    logo.classList.add('logo')
+   
     div.append(longLine)
     div.append(middleLine)
     div.append(shortLine)
+    nav.appendChild(logo)
     nav.appendChild(div)
     div.addEventListener('click', btnFunc);
+    div.addEventListener('onscroll', () =>{
+        console.log('asdasdas');
+    })
 
 }
 function createNavBarMenu() {

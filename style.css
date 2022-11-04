@@ -67,13 +67,18 @@ main{
 }
 
 .logo {
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 60px;
     background-image: url(./img/akLogo.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     margin: 15px;
-
+    margin-top: 20px;
+}
+.logoFixed{
+    position: fixed;
+    top: 5%;
+    left: 5%;
 }
 
 .navForMobile {
@@ -122,6 +127,16 @@ main{
     flex-direction: column;
     align-items: flex-end;
     margin: 15px;
+}
+.btnFixed{
+    position: fixed;
+    top: 2%;
+}
+nav{
+    z-index: 30;
+}
+.boxForNav{
+    box-shadow: 2px 2px 5px #002760;
 }
 #btnForMobile div {
     background-color: var(--greenColor);
@@ -238,6 +253,10 @@ main{
  font-size: 15px;
  border-color: var(--greenColor);
 
+}
+.btn a{
+    text-decoration: none;
+    color: var(--greenColor);
 }
 #aboutMe{
     width: 90%;
