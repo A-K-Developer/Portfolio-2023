@@ -1,17 +1,15 @@
-import {html, render} from 'https://unpkg.com/lit-html?module';
-
-let btnForMobile = document.getElementById('btnForMobile');
-btnForMobile.addEventListener('click', btnFunc);
 
 let basicPdf = document.getElementById('basicPdf')
-basicPdf.addEventListener('click', showBasic)
 let fundaPdf = document.getElementById('fundamentalsPdf');
-fundaPdf.addEventListener('click',showFundamentals)
 let advancedBtn = document.getElementById('advancedPdf');
+
+basicPdf.addEventListener('click', showBasic)
+fundaPdf.addEventListener('click',showFundamentals)
 advancedBtn.addEventListener('click',goToGitHubJSAdvanced )
 
-function btnFunc() {
-
+createNavBtn()
+function btnFunc(arg) {
+    let btnForMobile = document.getElementById('btnForMobile');
     let longLine = btnForMobile.querySelector('.longLine');
     let shortLine = btnForMobile.querySelector('.shortLine');
     let showNav = document.getElementsByClassName('navForMobile')[0];
@@ -20,11 +18,9 @@ function btnFunc() {
 
     if (showNav == null) {
         createNavBarMenu();
-
     }
-
     if (longLine.style.display == 'none') {
-        main.classList.add('makeMainShort')
+        window.innerHeight = '844px'
         main.classList.remove('blurMain')
         longLine.classList.add('longLineAni2')
         shortLine.classList.add('shortLineAni2')
@@ -62,19 +58,64 @@ function btnFunc() {
         }
     }
 }
+function createNavBtn(){
+    let div = document.createElement('div')
+    div.id = 'btnForMobile';
+    let longLine = document.createElement('div')
+    let middleLine = document.createElement('div')
+    let shortLine = document.createElement('div')
+    let nav = document.getElementsByTagName('nav')[0];
+    longLine.classList.add('longLine');
+    shortLine.classList.add('shortLine');
+    middleLine.classList.add('middleLine');
+    console.log(nav);
+    div.append(longLine)
+    div.append(middleLine)
+    div.append(shortLine)
+    nav.appendChild(div)
+    div.addEventListener('click', btnFunc);
 
+}
 function createNavBarMenu() {
+    
     let divContainer = document.createElement('div');
     let nav = document.getElementsByTagName('nav')[0];
     let numbersArr = ['I.', 'II.', 'III.', 'IV.'];
-    let achorNameArr = ['About', 'Experience', 'Work', 'Contact', 'Resume'];
+    let achorNameArr = ['About', 'Projects', 'Certificate', 'Contact', 'Resume'];
+    
     divContainer.classList.add('navForMobileAni')
     divContainer.classList.add('navForMobile')
+    divContainer.style.height=window.innerHeight;
     let arrayFromTags = [];
     for (let i = 0; i < 5; i++) {
+
         let tagsWithNames = document.createElement('div');
         let anchorTag = document.createElement('a');
+        if(i == 0){
+            anchorTag.setAttribute('href','#aboutMe');
+            
+        }else if(i == 1){
+            anchorTag.setAttribute('href','#projects');
+            
+        }else if(i == 2){
+            anchorTag.setAttribute('href','#certificate');
+            
+        }else if(i == 3){
+            anchorTag.setAttribute('href','#getInTouch');
+            
+        }else if(i == 4){
+            anchorTag.setAttribute('href','#projects');
+            
+        }
+        anchorTag.addEventListener('click',() => {
+            let mainTag = document.getElementsByTagName('main')[0]
+            mainTag.classList.remove('blurMain')
+            btnFunc('nav')
+            
+        })
+
         anchorTag.textContent = achorNameArr[i];
+        
         if(achorNameArr[i] == 'Resume'){
             anchorTag.addEventListener('click',showResume);
         }
@@ -109,6 +150,7 @@ function changeColor() {
     }
 }
 setInterval(changeColor, 1010)
+
 
 function showResume(){
         let pdf = './img/AsenKrushkovCV2021.pdf';
@@ -173,6 +215,10 @@ function createFirstProject(){
         window.location.href = 'https://a-k-developer.github.io/KogeMap/'
     })
 }
+const scrollToDiv = (id) =>{
+    const element = document.getElementById(id);
+    element.scrollTop = element.scrollHeight;
+}
 function createSecondProject(){
     left.style.width = '33.33%';
     middle.style.width= '33.33%'
@@ -204,7 +250,7 @@ function createThirthProject(){
     
     let div = main.querySelector('div');
     let video = main.querySelector('video')
-    let btn = main.querySelector('button');
+
     if(div){
         
         main.removeChild(video)
@@ -229,8 +275,10 @@ function createVideo(container,videopath){
 
     source.setAttribute('src',videopath);
     source.setAttribute('type','video/mp4');
+    source.setAttribute('muted', "muted")
+    source.setAttribute('autoplay', "")
     source.classList.add('video')
-    source.play()
+    
     container.appendChild(source)
     
 }
@@ -267,3 +315,4 @@ function projectTemplate(arr,main){
     main.append(container)
     
 }
+createFirstProject()
