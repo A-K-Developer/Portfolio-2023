@@ -327,7 +327,7 @@ main{
 }
 #certificate{
     width: 90%;
-    height: 700px;
+    height: 1500px;
     
 }
 .projectContainer{
@@ -449,7 +449,6 @@ main{
 #getInTouch{
     width: 90%;
     position: relative;
-    margin-top: 800px;
     text-align: center;
     display: flex;
     flex-direction: column;
