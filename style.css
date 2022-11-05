@@ -16,7 +16,7 @@ body {
 }
 
 h1 {
-    font-family: 'Algerian';
+    font-family: 'algerian-regular', sans-serif;;
     color: aliceblue;
     font-size: 28px;
     margin: 0;
@@ -365,7 +365,7 @@ nav{
     margin: auto;
     position: relative;
     top: 0px;
-    max-height: 72px;
+    max-height: 100px;
     overflow: scroll;
     box-shadow: 2px 2px 5px #002760;
 }
@@ -402,6 +402,7 @@ nav{
     display: flex;
     flex-direction: column;
 }
+
 .iconForProject{
     width: 20px;
     height: 20px;

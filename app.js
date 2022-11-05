@@ -2,110 +2,110 @@
 pdfListener('basicPdf','fundamentalsPdf','advancedPdf')
 createNavBtn()
 
-function btnFunc(arg) {
-    let btnForMobile = document.getElementById('btnForMobile');
-    let longLine = btnForMobile.querySelector('.longLine');
-    let shortLine = btnForMobile.querySelector('.shortLine');
-    let showNav = document.getElementsByClassName('navForMobile')[0];
-    let nav = document.getElementsByTagName('nav')[0];
-    let main = document.getElementsByTagName('main')[0];
+function classControl(type,typeName,parent,addClasses,removeClass,changeStyle){
+    let element;
+    if(type == 'id'){
+        element = document.getElementById(typeName);
+    }else if( type == 'query'){
+        element = parent.querySelector(typeName);
+        element = parent.querySelector(typeName);
+    }else if( type == 'class'){
+        element = document.getElementsByClassName(typeName)[0];
+    }else if( type == 'tag'){
+        element = document.getElementsByTagName(typeName)[0];
+    }
+    
+    if(addClasses){
+        for(let i = 0 ; i < addClasses.length ; i++){
+        
+            element.classList.add(addClasses.shift());
+        }
+    }else if(removeClass){
+        for(let z = 0 ; z < removeClass.length; z++){
+            let classes = removeClass.shift()
+            element.classList.remove(classes);
+    
+        }
+    }
 
+    if(changeStyle == 'hide'){
+        element.style.display = 'block';
+    }else if(changeStyle == 'show'){
+        element.style.display = 'none'
+    }
+   
+    return element
+}
+function btnFunc(arg) {
+    let btnForMobile = classControl('id','btnForMobile','','','','')
+    let longLine = classControl('query','.longLine',btnForMobile,'','','');
+    let showNav = classControl('class','navForMobile','','','','')
+    let nav = classControl('tag','nav','','','');
     if (showNav == null) {
         createNavBarMenu();
-        nav.classList.add('btnFixed')
+        classControl('tag','nav','',['btnFixed'],'','');
     }
-    if (longLine.style.display == 'none') {
-        window.innerHeight = '844px'
-        main.classList.remove('blurMain')
-        longLine.classList.add('longLineAni2')
-        shortLine.classList.add('shortLineAni2')
-        longLine.style.display = 'block';
-        shortLine.style.display = 'block'
-        showNav.classList.add('navForMobileAniBack')
 
-        console.log('close');
-        console.log(showNav);
-        showNav.classList.remove('navForMobileAni')
+    if (longLine.style.display == 'none') {
+        classControl('tag','main','','',['blurMain'],'');
+        classControl('query','.longLine',btnForMobile,['longLineAni2'],['longLineAni'],'hide');
+        classControl('query','.shortLine',btnForMobile,['shortLineAni2'],['shortLineAni'],'hide');
+        classControl('class','navForMobile','',['navForMobileAniBack'],['navForMobileAni'],'')
         setTimeout(() => {
             nav.removeChild(showNav)
+            classControl('query','.longLine',btnForMobile,'',['longLineAni2'],'hide');
+            classControl('query','.shortLine',btnForMobile,'',['shortLineAni2'],'hide');
         }, 900)
-
-    } else {
-
-        main.classList.add('blurMain')
-        longLine.classList.remove('longLineAni2')
-        shortLine.classList.remove('shortLineAni2')
-        longLine.classList.add('longLineAni')
-        shortLine.classList.add('shortLineAni');
+       
+    } else { 
+        
+        classControl('tag','main','',['blurMain'],'','');
+        classControl('query','.longLine',btnForMobile,['longLineAni'],['longLineAni2'],'hide');
+        classControl('query','.shortLine',btnForMobile,['shortLineAni'],['shortLineAni2'],'hide');
+        
         setTimeout(() => {
-            longLine.style.display = 'none';
-            shortLine.style.display = 'none';
-            longLine.classList.remove('longLineAni')
-            shortLine.classList.remove('shortLineAni')
-
+            classControl('query','.longLine',btnForMobile,'',['longLineAni','longLineAni2'],'show');
+            classControl('query','.shortLine',btnForMobile,'',['shortLineAni','shortLineAni2'],'show');
         }, 900)
-        if (showNav) {
-
-            nav.append(showNav);
-            showNav.classList.remove('navForMobileAniBack')
-            showNav.classList.add('navForMobileAni')
-            console.log(showNav);
-        }
     }
 }
 function createNavBtn(){
-    let div = document.createElement('div')
-    div.id = 'btnForMobile';
-    let longLine = document.createElement('div')
-    let middleLine = document.createElement('div')
-    let shortLine = document.createElement('div')
-    let logo = document.createElement('div');
     let nav = document.getElementsByTagName('nav')[0];
+    createElement('div',nav,'','','',['logo'],'','','');
+    let div = createElement('div',nav,'btnForMobile','',['click',btnFunc],'','','','');
 
-    longLine.classList.add('longLine');
-    shortLine.classList.add('shortLine');
-    middleLine.classList.add('middleLine');
-    logo.classList.add('logo')
-   
-    div.append(longLine)
-    div.append(middleLine)
-    div.append(shortLine)
-    nav.appendChild(logo)
-    nav.appendChild(div)
-    div.addEventListener('click', btnFunc);
-    div.addEventListener('onscroll', () =>{
-        console.log('asdasdas');
-    })
-
+    createElement('div', div,'','','',['longLine'],'','','')
+    createElement('div', div,'','','',['middleLine'],'','','')
+    createElement('div', div,'','','',['shortLine'],'','','')
 }
 function createElement(type,parent,id,attributeArr,
     eventListenerArr,classArr,action,context,makeh3case){
-    let href, path = attributeArr;
+    let [href, path] = attributeArr;
     let container = document.createElement(type);
-        container.textContent = context;
-
+    container.textContent = context;
+  
+    container.setAttribute(href,path)
+    container.id = id;
     
     while(classArr.length > 0 && classArr !== ''){
         container.classList.add(classArr.shift())
     }
-    if(eventListenerArr !== ''){
 
+    if(eventListenerArr !== ''){
         let event = eventListenerArr.shift();
+
         while(eventListenerArr.length > 0){
             container.addEventListener(event,eventListenerArr[0]);
             eventListenerArr.shift();
         }
     }
-    //divContainer.id = id;
     
-    //divContainer.addEventListener(event,func);
-    //divContainer.setAttribute(href,path);
     if(action == 'push'){
         parent.push(container)
     }else {
         parent.appendChild(container)
-
     }
+
     return container
 }
 
@@ -143,8 +143,6 @@ function createNavBarMenu() {
         if(achorNameArr[i] == 'Resume'){
             anchorTag.addEventListener('click',showResume);
         }
-       
-        tagsWithNames.appendChild(anchorTag)
         tagsWithNames.classList.add('navBarLinks')
         arrayFromTags.push(tagsWithNames)
     }
@@ -153,10 +151,11 @@ function createNavBarMenu() {
     })
 
 }
-let i = 0;
-let hash = [];
+
 
 function changeColor() {
+    let i = 0;
+    let hash = [];
     let containerClass = 'skills'
     let ul = document.getElementsByClassName(containerClass);
     hash = ['#8892b0', '#64ffda'];
@@ -191,11 +190,8 @@ function putLineAfterHeader(){
     let headers = Array.from(document.getElementsByClassName('header'));
     
     headers.forEach(x =>{
-        let h1 = x.querySelector('h1');
         let div = x.querySelector('div');
         div.classList.add('lineAfterHeader')
-        let width = h1.style.width;
-        console.log(width);
     })
 }
 putLineAfterHeader();
@@ -217,6 +213,7 @@ function createFirstProject(){
     projects[0].style.color = '#64ffda'
     projects[1].style.color = '#8892b0'
     projects[2].style.color = '#8892b0'
+    
     left.style.width = '0%';
     middle.style.width = '30%'
     right.style.width = '70%';
@@ -301,59 +298,42 @@ function createThirthProject(){
 
 
 function createVideo(container,videopath){
-    let source = document.createElement('video');
+    let video = document.createElement('video');
+    video.setAttribute('controls', "")
+
+    let source = document.createElement('source')
 
     source.setAttribute('src',videopath);
     source.setAttribute('type','video/mp4');
     source.setAttribute('muted', "muted")
     source.setAttribute('autoplay', "")
     
-    source.classList.add('video')
+    video.classList.add('video')
     
-    container.appendChild(source)
+    video.appendChild(source)
+    container.appendChild(video)
     
 }
 
 
 function projectTemplate(arr,main){
-    let container = document.createElement('div');
-    let h3 = document.createElement('h3');
-    let icon = document.createElement('img');
-    let scrollDownBtn = document.createElement('div');
-    
-    icon.setAttribute('src','./img/share.png')
-    container.classList.add('projectContainer')
-    icon.classList.add('iconForProject')
-    scrollDownBtn.classList.add('scrollDownBaby');
-    
-    h3.textContent = arr.shift();
-    
-
-    let ol = document.createElement('ol');
+    let container = createElement('div',main,'','','',['projectContainer'],'','','')
+    createElement('h3',container,'','','','','',arr.shift(),'');
+    createElement('img',container,'',['src','./img/share.png'],'',['iconForProject'],'','','');
+    createElement('div',container,'','','',['scrollDownBaby'],'','','');
+    let ol = createElement('ol',container,'','','','','','','');
     arr.forEach(x => {
         if(x !== ''){
-
-            let li = document.createElement('li');
-            li.textContent = x;
-            ol.append(li)
+            createElement('li',ol,'','','','','',x,'');
         }
     })
-
-    container.append(h3)
-    container.append(scrollDownBtn)
-    container.append(icon)
-    container.append(ol);
-    main.append(container)
-    
 }
 
 function pdfListener(arg,arg1,arg2){
-    let basicPdf = document.getElementById(arg)
-    let fundaPdf = document.getElementById(arg1);
-    let advancedBtn = document.getElementById(arg2);
-    basicPdf.addEventListener('click', showBasic)
-    fundaPdf.addEventListener('click',showFundamentals)
-    advancedBtn.addEventListener('click',goToGitHubJSAdvanced )
+    document.getElementById(arg).addEventListener('click', showBasic)
+    document.getElementById(arg1).addEventListener('click',showFundamentals)
+    document.getElementById(arg2).addEventListener('click',goToGitHubJSAdvanced )
+   
 }
 createFirstProject()
 
