@@ -1,13 +1,7 @@
 
-let basicPdf = document.getElementById('basicPdf')
-let fundaPdf = document.getElementById('fundamentalsPdf');
-let advancedBtn = document.getElementById('advancedPdf');
-
-basicPdf.addEventListener('click', showBasic)
-fundaPdf.addEventListener('click',showFundamentals)
-advancedBtn.addEventListener('click',goToGitHubJSAdvanced )
-
+pdfListener('basicPdf','fundamentalsPdf','advancedPdf')
 createNavBtn()
+
 function btnFunc(arg) {
     let btnForMobile = document.getElementById('btnForMobile');
     let longLine = btnForMobile.querySelector('.longLine');
@@ -84,21 +78,49 @@ function createNavBtn(){
     })
 
 }
+function createElement(type,parent,id,attributeArr,
+    eventListenerArr,classArr,action,context,makeh3case){
+    let href, path = attributeArr;
+    let container = document.createElement(type);
+        container.textContent = context;
+
+    
+    while(classArr.length > 0 && classArr !== ''){
+        container.classList.add(classArr.shift())
+    }
+    if(eventListenerArr !== ''){
+
+        let event = eventListenerArr.shift();
+        while(eventListenerArr.length > 0){
+            container.addEventListener(event,eventListenerArr[0]);
+            eventListenerArr.shift();
+        }
+    }
+    //divContainer.id = id;
+    
+    //divContainer.addEventListener(event,func);
+    //divContainer.setAttribute(href,path);
+    if(action == 'push'){
+        parent.push(container)
+    }else {
+        parent.appendChild(container)
+
+    }
+    return container
+}
+
 function createNavBarMenu() {
     
-    let divContainer = document.createElement('div');
     let nav = document.getElementsByTagName('nav')[0];
     let numbersArr = ['I.', 'II.', 'III.', 'IV.'];
     let achorNameArr = ['About', 'Projects', 'Certificate', 'Contact', 'Resume'];
-    
-    divContainer.classList.add('navForMobileAni')
-    divContainer.classList.add('navForMobile')
-    divContainer.style.height=window.innerHeight;
+    let divContainer = createElement('div',nav,'','','',['navForMobileAni','navForMobile'],'','','')
     let arrayFromTags = [];
     for (let i = 0; i < 5; i++) {
 
-        let tagsWithNames = document.createElement('div');
-        let anchorTag = document.createElement('a');
+        let tagsWithNames = document.createElement('div')
+        let anchorTag = createElement('a',tagsWithNames,'','',['click',anchorTagFun],'','append',achorNameArr[i])
+        
         if(i == 0){
             anchorTag.setAttribute('href','#aboutMe');
             
@@ -115,21 +137,13 @@ function createNavBarMenu() {
             anchorTag.setAttribute('href','#projects');
             
         }
-        anchorTag.addEventListener('click',() => {
-            let mainTag = document.getElementsByTagName('main')[0]
-            mainTag.classList.remove('blurMain')
-            btnFunc('nav')
-            
-        })
-
-        anchorTag.textContent = achorNameArr[i];
+        createElement('h3',tagsWithNames,'','','','','',numbersArr[i],'');
+       
         
         if(achorNameArr[i] == 'Resume'){
             anchorTag.addEventListener('click',showResume);
         }
-        let h3 = document.createElement('h3');
-        h3.textContent = numbersArr[i];
-        tagsWithNames.appendChild(h3)
+       
         tagsWithNames.appendChild(anchorTag)
         tagsWithNames.classList.add('navBarLinks')
         arrayFromTags.push(tagsWithNames)
@@ -137,8 +151,6 @@ function createNavBarMenu() {
     arrayFromTags.forEach(x => {
         divContainer.appendChild(x)
     })
-
-    nav.append(divContainer)
 
 }
 let i = 0;
@@ -334,4 +346,19 @@ function projectTemplate(arr,main){
     main.append(container)
     
 }
+
+function pdfListener(arg,arg1,arg2){
+    let basicPdf = document.getElementById(arg)
+    let fundaPdf = document.getElementById(arg1);
+    let advancedBtn = document.getElementById(arg2);
+    basicPdf.addEventListener('click', showBasic)
+    fundaPdf.addEventListener('click',showFundamentals)
+    advancedBtn.addEventListener('click',goToGitHubJSAdvanced )
+}
 createFirstProject()
+
+function anchorTagFun(){
+    let mainTag = document.getElementsByTagName('main')[0]
+    mainTag.classList.remove('blurMain')
+    btnFunc('nav')
+}

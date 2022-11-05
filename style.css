@@ -300,7 +300,6 @@ nav{
     height: 100%;
     position: absolute;
     border-style: groove;
-    border-radius: 5px;
     border-color: var(--greenColor);
     top: 5%;
     left: 5%;
@@ -316,7 +315,7 @@ nav{
 }
 #projects{
     width: 90%;
-    height: 100vh;
+    height: 800px;
     font-size: 15px;
 }
 #projectsList{
@@ -413,7 +412,6 @@ nav{
     
 }
 .video{
-    margin-top: 22px;
     width: 100%;
     height: 800px;
     position: absolute;
