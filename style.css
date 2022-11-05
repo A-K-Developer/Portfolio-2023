@@ -37,7 +37,7 @@ h1{
 p {
     color: var(--colorParag);
     font-family: 'Poppins';
-    font-size: 15px;
+    font-size: 12px;
 }
 span{
     color: var(--greenColor);
@@ -45,6 +45,7 @@ span{
 li{
     font-family: 'Poppins';
     color: aliceblue;
+    font-size: 13px;
 }
 a{
     color: #e6f1ff;
@@ -319,12 +320,14 @@ nav{
     font-size: 15px;
 }
 #projectsList{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 15px;
+    margin: 5px 2px;
     color: var(--colorParag);
     font-weight: bold;
+    gap: 15px;
 
 }
 
@@ -352,7 +355,8 @@ nav{
 }
 #certificate{
     width: 90%;
-    height: 1500px;
+    height: 1200px;
+    margin-top: 20px;
     
 }
 .projectContainer{
@@ -425,9 +429,9 @@ nav{
     margin-top: 5px;
 }
 .certificateContainer{
-    margin: 50px 0px;
+    margin: 50px 22px;
     box-shadow: 2px 2px 5px #002760;
-    padding: 20px;
+    padding: 11px;
 }
 .skillLevel{
     display: flex;

@@ -202,6 +202,9 @@ let video = main.querySelectorAll('.video');
 
 
 function createFirstProject(){
+    projects[0].style.color = '#64ffda'
+    projects[1].style.color = '#8892b0'
+    projects[2].style.color = '#8892b0'
     left.style.width = '0%';
     middle.style.width = '30%'
     right.style.width = '70%';
@@ -228,9 +231,13 @@ const scrollToDiv = (id) =>{
     element.scrollTop = element.scrollHeight;
 }
 function createSecondProject(){
-    left.style.width = '33.33%';
-    middle.style.width= '33.33%'
-    right.style.width = '33.33%';
+    projects[0].style.color = '#8892b0'
+    projects[1].style.color = '#64ffda'
+    projects[2].style.color = '#8892b0'
+    
+    left.style.width = '30.33%';
+    middle.style.width= '36.33%'
+    right.style.width = '34.33%';
 
     let div = main.querySelector('div');
     let video = main.querySelector('video')
@@ -240,7 +247,7 @@ function createSecondProject(){
         main.removeChild(div);
         main.removeChild(video)
     }
-    let arr= ['Restaurant website','03/05.2022','Web and Mobile version','Everything is coded by me','100% Vanila Javascript','100% Vanila CSS ','Menu for Restaurant;','Design is not my work!']
+    let arr= ['Restaurant website','','Web and Mobile version','Everything is coded by me','100% Vanila Javascript','100% Vanila CSS ','Menu for Restaurant;','Design is not my work!']
     //createBtn(main)
     projectTemplate(arr,main)
     createVideo(main,'./img/DistrictTonkinMobile.mp4')
@@ -252,8 +259,11 @@ function createSecondProject(){
     
 }
 function createThirthProject(){
-    left.style.width = '70%';
-    middle.style.width = '30%'
+    projects[0].style.color = '#8892b0'
+    projects[1].style.color = '#8892b0'
+    projects[2].style.color = '#64ffda'
+    left.style.width = '67%';
+    middle.style.width = '33%'
     right.style.width = '0';
     
     let div = main.querySelector('div');
@@ -264,7 +274,7 @@ function createThirthProject(){
         main.removeChild(video)
         main.removeChild(div);
     }
-    let arr= ['Guide for internation App','09/10.2022','Mobile Version Only','Everything is coded by me','Vanilla JS - CSS','I used Firefox to storage data','I cover all CRUD operation in this project','Login Register Logout system','Only using page.js and lit-html','Design is not my work!']
+    let arr= ['Guide for internation App','','Mobile Version Only','Everything is coded by me','Vanilla JS - CSS','I used Firefox to storage data','I cover all CRUD operation in this project','Login Register Logout system','Only using page.js and lit-html','Design is not my work!']
     
     projectTemplate(arr,main)
     createVideo(main,'./img/Survival-guideVideo.mp4')
@@ -285,6 +295,7 @@ function createVideo(container,videopath){
     source.setAttribute('type','video/mp4');
     source.setAttribute('muted', "muted")
     source.setAttribute('autoplay', "")
+    
     source.classList.add('video')
     
     container.appendChild(source)
