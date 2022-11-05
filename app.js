@@ -117,8 +117,8 @@ function createNavBarMenu() {
     let divContainer = createElement('div',nav,'','','',['navForMobileAni','navForMobile'],'','','')
     let arrayFromTags = [];
     for (let i = 0; i < 5; i++) {
-
         let tagsWithNames = document.createElement('div')
+        createElement('h3',tagsWithNames,'','','','','',numbersArr[i],'');
         let anchorTag = createElement('a',tagsWithNames,'','',['click',anchorTagFun],'','append',achorNameArr[i])
         
         if(i == 0){
@@ -137,7 +137,7 @@ function createNavBarMenu() {
             anchorTag.setAttribute('href','#projects');
             
         }
-        createElement('h3',tagsWithNames,'','','','','',numbersArr[i],'');
+       
        
         
         if(achorNameArr[i] == 'Resume'){
@@ -153,9 +153,9 @@ function createNavBarMenu() {
 }
 
 
+let i = 0;
+let hash = [];
 function changeColor() {
-    let i = 0;
-    let hash = [];
     let containerClass = 'skills'
     let ul = document.getElementsByClassName(containerClass);
     hash = ['#8892b0', '#64ffda'];
@@ -169,8 +169,38 @@ function changeColor() {
     }
 }
 setInterval(changeColor, 1010)
+const animateCSS = (element, animation, prefix = 'imgFrame') =>
+  // We create a Promise and return it
+  new Promise((resolve, reject) => {
+    const animationName = `${prefix}${animation}`;
+    const node = document.querySelector(element);
 
+    node.classList.add(`${prefix}animated`, animationName);
 
+    // When the animation ends, we clean the classes and resolve the Promise
+    function handleAnimationEnd(event) {
+      event.stopPropagation();
+      node.classList.remove(`${prefix}animated`, animationName);
+      resolve('Animation ended');
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd, {once: true});
+  });
+  animateCSS('.imgFrame','Ani').then((message) => {
+    console.log('koi si ti');
+    animateCSS('.imgFrame','Rev').then((message) =>{
+        console.log('koi');
+    })
+  })
+function frameAni(){
+    let imgFrame = document.getElementsByClassName('imgFrame')[0];
+    imgFrame.classList.add('imgFrameAni');
+    imgFrame.addEventListener('animationend',() => {
+        imgFrame.classList.remove('imgFrameAni');
+        
+    })
+}
+setInterval(frameAni, 1010)
 function showResume(){
         let pdf = './img/AsenKrushkovCV2021.pdf';
         window.open(pdf)
