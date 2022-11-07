@@ -14,20 +14,24 @@ body {
     background-color: #0a192f;
     margin: 0;
 }
-
+h3{
+    cursor: default;
+}
 h1 {
-    
+
     color: aliceblue;
     font-size: 28px;
     margin: 0;
 }
-h4{
+
+h4 {
     color: var(--greenColor);
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
 
 }
-h1{
+
+h1 {
     font-family: 'Permanent Marker', cursive;
     color: aliceblue;
     font-size: 28px;
@@ -39,15 +43,18 @@ p {
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
 }
-span{
+
+span {
     color: var(--greenColor);
 }
-li{
+
+li {
     font-family: 'Poppins';
     color: aliceblue;
     font-size: 13px;
 }
-a{
+
+a {
     color: #e6f1ff;
 }
 
@@ -59,7 +66,8 @@ nav {
     position: relative;
     align-items: center;
 }
-main{
+
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,7 +84,8 @@ main{
     margin: 15px;
     margin-top: 20px;
 }
-.logoFixed{
+
+.logoFixed {
     position: fixed;
     top: 5%;
     left: 5%;
@@ -96,30 +105,39 @@ main{
     align-items: center;
     text-transform: uppercase;
     margin-top: 5px;
-    
+
 }
-.navForMobileAni{
+
+.navForMobileAni {
     animation: navForMobileAni 1s ease-in-out 0s 1 alternate;
 }
+
 @keyframes navForMobileAni {
     from {
         margin-right: -100%;
-    }to {
-        margin-right:0%;
+    }
+
+    to {
+        margin-right: 0%;
     }
 }
-.navForMobileAniBack{
+
+.navForMobileAniBack {
     animation: navForMobileAniBack 1s ease-in-out 0s 1 alternate;
 }
+
 @keyframes navForMobileAniBack {
     from {
         margin-right: 0%;
-    }to {
+    }
+
+    to {
         margin-right: -100%;
     }
 }
+
 #btnForMobile {
-  z-index: 10;
+    z-index: 10;
     width: 40px;
     height: 20px;
     margin: 15px;
@@ -129,71 +147,88 @@ main{
     align-items: flex-end;
     margin: 15px;
 }
-.btnFixed{
-   
-}
-nav{
+
+.btnFixed {}
+
+nav {
     z-index: 30;
-    
+
 }
-.navHideScroll{
+
+.navHideScroll {
     display: none;
 }
+
 .navShowScroll {
-    
+
     position: fixed;
     display: flex;
     top: 0px;
 }
-.boxForNav{
+
+.boxForNav {
     box-shadow: 2px 2px 5px #002760;
 }
+
 #btnForMobile div {
     background-color: var(--greenColor);
     border-radius: 30px;
     height: 3px;
     position: absolute;
 }
+
 .shortLine {
     width: 50%;
     top: 100%;
 }
-.shortLineAni{
+
+.shortLineAni {
     animation: shortLineBtn 1s ease 0s 1 alternate;
 }
+
 @keyframes shortLineBtn {
     from {
         top: 100%;
         background-color: var(--greenColor);
-    }to {
+    }
+
+    to {
         top: 50%;
         width: 70%;
     }
 }
+
 .middleLine {
     width: 70%;
     top: 50%;
 }
+
 .longLine {
     width: 90%;
     top: 0%;
 }
+
 .longLineAni {
     animation: longLineBtn 1s ease 0s 1 alternate;
 }
-.show{
+
+.show {
     display: block;
 }
+
 @keyframes longLineBtn {
     from {
         top: 0%;
         background-color: var(--greenColor);
-    }to {
+    }
+
+    to {
         background-color: #0a192f;
         top: 50%;
         width: 70%;
     }
 }
+
 .longLineAni2 {
     animation: longLine2Btn 1s ease 0s 1 alternate-reverse;
 }
@@ -202,13 +237,16 @@ nav{
     from {
         top: 0%;
         background-color: var(--greenColor);
-    }to {
+    }
+
+    to {
         background-color: var(--greenColor);
         top: 50%;
         width: 70%;
     }
 }
-.shortLineAni2{
+
+.shortLineAni2 {
     animation: shortLine2Btn 1s ease 0s 1 alternate-reverse;
 }
 
@@ -216,31 +254,36 @@ nav{
     from {
         top: 100%;
         background-color: var(--greenColor);
-    }to {
+    }
+
+    to {
         top: 50%;
         width: 70%;
     }
 }
-.navBarLinks{
+
+.navBarLinks {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
-.navBarLinks h3{
+
+.navBarLinks h3 {
     margin: 2px;
     color: var(--greenColor);
 }
-.navBarLinks a{
+
+.navBarLinks a {
     text-decoration: none;
 }
 
-.blurMain{
+.blurMain {
     background-color: transparent;
     opacity: 0.5;
     backdrop-filter: blur(1.5rem);
 }
 
-#greeting{
+#greeting {
     width: 80%;
     height: 100vh;
     padding: 25px;
@@ -251,35 +294,41 @@ nav{
     text-align: start;
     gap: 10px;
 }
-.motive{
+
+.motive {
     font-family: 'Permanent Marker', cursive;
     color: var(--colorParag);
 }
-.btn{
- background-color: transparent;
- padding: 10px 14px;
- width: 50%;
- color: var(--greenColor);
- font-size: 15px;
- border-color: var(--greenColor);
+
+.btn {
+    background-color: transparent;
+    padding: 10px 14px;
+    width: 50%;
+    color: var(--greenColor);
+    font-size: 15px;
+    border: groove 1px var(--greenColor)
 
 }
-.btn a{
+
+.btn a {
     text-decoration: none;
     color: var(--greenColor);
 }
-#aboutMe{
+
+#aboutMe {
     width: 90%;
     height: 120vh;
     padding: 20px;
 }
-.lineAfterHeader{
+
+.lineAfterHeader {
     width: 100%;
     height: 2px;
     background-color: var(--colorParag);
     opacity: 0.3;
 }
-#aboutMe p{
+
+#aboutMe p {
     font-size: 18px;
 }
 
@@ -290,21 +339,25 @@ nav{
     gap: 10px;
     margin-bottom: 40px;
 }
-.listOfSkills li{
+
+.listOfSkills li {
     width: 40%;
     margin: 10px;
 }
-#profilePictureDiv{
+
+#profilePictureDiv {
     position: relative;
     width: 60%;
     display: flex;
     margin: auto;
 }
-#profilePictureDiv img{
+
+#profilePictureDiv img {
     width: 100%;
     border-radius: 5px;
 }
-.imgFrame{
+
+.imgFrame {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -314,20 +367,26 @@ nav{
     z-index: -10;
     box-shadow: 1px 1px 10px var(--greenColor);
 }
-.imgFrameAni{
+
+.imgFrameAni {
     animation: frameAni 1s ease-in-out 0s 1 alternate;
 }
-.imgFrameRev{
+
+.imgFrameRev {
     animation: frameAni 3s ease-in-out 3s 1 alternate-reverse;
 }
+
 @keyframes frameAni {
     from {
         box-shadow: 1px 1px 1px var(--greenColor);
-    }to {
-        box-shadow: 0px 0px 10px 
+    }
+
+    to {
+        box-shadow: 0px 0px 10px
     }
 }
-.imgOpacity{
+
+.imgOpacity {
     width: 100%;
     height: 100%;
     background-color: var(--greenColor);
@@ -336,12 +395,14 @@ nav{
     opacity: 0.3;
     border-radius: 5px;
 }
-#projects{
+
+#projects {
     width: 90%;
     height: 800px;
     font-size: 15px;
 }
-#projectsList{
+
+#projectsList {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -353,35 +414,40 @@ nav{
 
 }
 
-.lineUnder{
+.lineUnder {
     width: 100%;
     height: 2px;
     position: relative;
     top: 0%;
     display: flex;
 }
-.left{
+
+.left {
     width: 30%;
     height: 100%;
     background-color: var(--colorParag);
-   
+
 }
-.right{
+
+.right {
     width: 70%;
-    
+
     height: 100%;
     background-color: var(--colorParag);
 }
-.middle{
+
+.middle {
     background-color: var(--greenColor);
 }
-#certificate{
+
+#certificate {
     width: 90%;
     height: 1200px;
     margin-top: 20px;
-    
+
 }
-.projectContainer{
+
+.projectContainer {
     z-index: 10;
     background-color: #0a192f;
     width: 100%;
@@ -392,23 +458,26 @@ nav{
     overflow: scroll;
     box-shadow: 2px 2px 5px #002760;
 }
-.projectContainer h3{
+
+.projectContainer h3 {
     color: var(--greenColor);
     margin: 5px;
     font-size: 14px;
 }
-.projectContainer ol{
-    
-}
-.projectContainer ol li{
+
+.projectContainer ol {}
+
+.projectContainer ol li {
     color: var(--colorParag);
     font-size: 12px;
     margin-bottom: 5px;
 }
-.projectContainer ol li::marker{
+
+.projectContainer ol li::marker {
     color: var(--greenColor);
 }
-.scrollDownBaby{
+
+.scrollDownBaby {
     background-image: url(./img/scroll.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -419,85 +488,96 @@ nav{
     top: 55%;
 
 }
-#contentForProject{
+
+#contentForProject {
     position: relative;
     z-index: 12;
     display: flex;
     flex-direction: column;
 }
 
-.iconForProject{
+.iconForProject {
     width: 20px;
     height: 20px;
     background-size: cover;
     position: absolute;
     right: 5%;
     top: 10%;
-    
+
 }
-.video{
+
+.video {
     width: 100%;
     height: 800px;
     position: absolute;
     top: 0%;
     z-index: -10;
-    
+
 }
-.btnForProjects{
+
+.btnForProjects {
     width: 190px;
     padding: 5px 20px;
     position: relative;
     margin: auto;
     margin-top: 5px;
 }
-.certificateContainer{
+
+.certificateContainer {
     margin: 50px 22px;
     box-shadow: 2px 2px 5px #002760;
     padding: 11px;
 }
-.skillLevel{
+
+.skillLevel {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.skillLevel h3{
+
+.skillLevel h3 {
     color: var(--greenColor);
     margin-left: 20px;
-    
+
 }
-.skillLevel img{
+
+.skillLevel img {
     width: 30px;
     height: 30px;
 }
-.skillsz{
+
+.skillsz {
     margin: 30px 5px;
-    text-align: start ;
+    text-align: start;
     font-size: 20px;
     list-style: circle outside;
     margin: 0;
-    
-    
+
+
 }
-.skillsz li{
+
+.skillsz li {
     margin-bottom: 10px;
     color: var(--colorParag);
     position: relative;
     padding-inline-start: 1ch;
-    
+
 }
-.skillsz li::marker{
+
+.skillsz li::marker {
     content: url(./img/angle-up.png);
     height: 20px;
 }
-.certificateBtn{
+
+.certificateBtn {
     height: auto;
     font-size: 14px;
     padding: 5px;
     margin: 5px;
 }
 
-#getInTouch{
+#getInTouch {
     width: 90%;
     position: relative;
     text-align: center;
@@ -507,11 +587,13 @@ nav{
     align-items: center;
     margin-bottom: 30px;
 }
-#getInTouch p{
+
+#getInTouch p {
     text-align: center;
     width: 80%;
 }
-#socialContainer{
+
+#socialContainer {
     display: flex;
     flex-direction: row;
     gap: 15px;
@@ -519,14 +601,17 @@ nav{
     align-items: center;
     justify-content: center;
 }
-#socialContainer img{
+
+#socialContainer img {
     width: 20px;
 }
-#socialContainer p{
+
+#socialContainer p {
     text-align: center;
     align-items: center;
 }
-.textArea{
+
+.textArea {
     width: 80%;
     min-height: 200px;
     margin: 10px;
@@ -535,11 +620,13 @@ nav{
     font-size: 16px;
     padding: 20px;
 }
-.sayHello{
+
+.sayHello {
     width: 220px;
     padding: 8px 50px;
 }
-.sayHello a{
+
+.sayHello a {
     text-decoration: none;
     color: var(--greenColor);
 }
@@ -555,4 +642,54 @@ nav{
         font-size: var(--fontForWebP);
     }
 
+
+    main {
+        padding: 0 20%;
+    }
+
+    nav {
+        height: 95px;
+        font-size: 12px;
+        background-color: var(--backgroundColor);
+    }
+
+    .logo {
+        width: 100px;
+        height: 110px;
+    }
+
+    .navForMobile {
+        display: flex;
+        flex-direction: row;
+        z-index: 5;
+        width: 50%;
+        position: relative;
+        background-color: transparent;
+        height: 100px;
+    }
+
+    .boxForNav {
+        box-shadow: 5px 5px 15px #002760;
+    }
+
+    .navBarLinks {
+        flex-direction: row;
+        align-items: center;
+    }
+    .navBarLinks a{
+        text-align: center;
+        font-family: 'Permanent Marker', cursive;
+    }
+
+    .btnForWeb {
+        font-size: 9px;
+        border: groove 1px  var(--greenColor);
+        padding: 5px 10px;
+    }
+    .btnForWeb a{
+        color: var(--greenColor);
+    }
+    .projects{
+        cursor:pointer;
+    }
 }

@@ -2,7 +2,7 @@
 pdfListener('basicPdf','fundamentalsPdf','advancedPdf')
 createNavBtn()
 
-function classControl(type,typeName,parent,addClasses,removeClass,changeStyle){
+function classControl(type,typeName,parent,addClasses,removeClass,changeStyle,textContent){
     let element;
     if(type == 'id'){
         element = document.getElementById(typeName);
@@ -384,11 +384,12 @@ function scrollNav(){
         let currentScroll = window.pageYOffset;
         if (currentScroll - lastScroll > 0) {
             header.classList.add("navHideScroll");
-            
+            header.classList.remove("boxForNav");
             header.classList.remove("navShowScroll");
         } else {
             // scrolled up -- header show
             header.classList.add("navShowScroll");
+            header.classList.add("boxForNav");
             header.classList.remove("navHideScroll");
            
         }
@@ -397,3 +398,21 @@ function scrollNav(){
     })
 }
 scrollNav()
+
+
+if(screen.width > 700){
+    createNavBarMenu()
+    let btnForMobile = classControl('id','btnForMobile','','','','')
+    let navBarLink = Array.from(document.getElementsByClassName('navBarLinks'));
+    navBarLink.forEach(x => {
+        if(x.textContent == 'Resume'){
+            x.classList.remove('btn')
+            x.classList.add('btnForWeb')
+        }
+    })
+    btnForMobile.remove()
+    
+    
+}else{
+
+}
