@@ -16,19 +16,19 @@ body {
 }
 
 h1 {
-    font-family: 'algerian-regular', sans-serif;;
+    
     color: aliceblue;
     font-size: 28px;
     margin: 0;
 }
 h4{
     color: var(--greenColor);
-    font-family: 'aharoni';
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
 
 }
 h1{
-    font-family: 'Algerian';
+    font-family: 'Permanent Marker', cursive;
     color: aliceblue;
     font-size: 28px;
     margin: 0;
@@ -36,8 +36,8 @@ h1{
 
 p {
     color: var(--colorParag);
-    font-family: 'Poppins';
-    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
 }
 span{
     color: var(--greenColor);
@@ -85,11 +85,11 @@ main{
 .navForMobile {
     position: fixed;
     right: 0;
-    top: 0%;
+    top: -4%;
     z-index: 5;
     width: 70%;
     background-color: var(--navColor);
-    height: 100vh;
+    height: 110vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -130,11 +130,20 @@ main{
     margin: 15px;
 }
 .btnFixed{
-    position: fixed;
-    top: 2%;
+   
 }
 nav{
     z-index: 30;
+    
+}
+.navHideScroll{
+    display: none;
+}
+.navShowScroll {
+    
+    position: fixed;
+    display: flex;
+    top: 0px;
 }
 .boxForNav{
     box-shadow: 2px 2px 5px #002760;
@@ -243,7 +252,7 @@ nav{
     gap: 10px;
 }
 .motive{
-    font-family: 'Algerian';
+    font-family: 'Permanent Marker', cursive;
     color: var(--colorParag);
 }
 .btn{
@@ -261,7 +270,7 @@ nav{
 }
 #aboutMe{
     width: 90%;
-    height: 100vh;
+    height: 120vh;
     padding: 20px;
 }
 .lineAfterHeader{
@@ -403,8 +412,8 @@ nav{
     background-image: url(./img/scroll.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     right: 5%;
     top: 55%;

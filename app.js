@@ -372,3 +372,28 @@ function anchorTagFun(){
     mainTag.classList.remove('blurMain')
     btnFunc('nav')
 }
+function scrollNav(){
+    const body = document.body;
+    const header = body.querySelector("nav");
+    const main = document.querySelector("main");
+    const headerHeight = document.querySelector("nav").offsetHeight;
+    
+    main.style.top = headerHeight + "px";
+    let lastScroll = 0;
+    window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset;
+        if (currentScroll - lastScroll > 0) {
+            header.classList.add("navHideScroll");
+            
+            header.classList.remove("navShowScroll");
+        } else {
+            // scrolled up -- header show
+            header.classList.add("navShowScroll");
+            header.classList.remove("navHideScroll");
+           
+        }
+        lastScroll = currentScroll;
+        console.log(lastScroll);
+    })
+}
+scrollNav()
