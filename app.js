@@ -7,7 +7,7 @@ function classControl(type,typeName,parent,addClasses,removeClass,changeStyle,te
     if(type == 'id'){
         element = document.getElementById(typeName);
     }else if( type == 'query'){
-        element = parent.querySelector(typeName);
+        
         element = parent.querySelector(typeName);
     }else if( type == 'class'){
         element = document.getElementsByClassName(typeName)[0];
@@ -80,13 +80,19 @@ function createNavBtn(){
 }
 function createElement(type,parent,id,attributeArr,
     eventListenerArr,classArr,action,context,makeh3case){
-    let [href, path] = attributeArr;
+
     let container = document.createElement(type);
-    container.textContent = context;
-  
-    container.setAttribute(href,path)
-    container.id = id;
+    let [href, path] = attributeArr;
     
+    if(context !== ''){
+        container.textContent = context;
+    }
+    if(id !== ''){
+        container.id = id;
+    }
+    if(href !== undefined && path !== undefined){
+        container.setAttribute(href,path)
+    }
     while(classArr.length > 0 && classArr !== ''){
         container.classList.add(classArr.shift())
     }
@@ -164,7 +170,7 @@ function changeColor() {
     i++;
 
     if (i > ul.length - 1) {
-        i = 0;
+        i = 0;  
         
     }
 }
@@ -408,6 +414,28 @@ if(screen.width > 700){
         if(x.textContent == 'Resume'){
             x.classList.remove('btn')
             x.classList.add('btnForWeb')
+            x.classList.add('btnForWebHover')
+            x.addEventListener('mouseenter', (t) => {
+                t.currentTarget.classList.remove('btnForWeb')
+                t.currentTarget.classList.add('btnForWebHover')
+                t.currentTarget.classList.add('backGroundResume');
+            })
+            x.addEventListener('mouseleave', (t) => {
+                t.currentTarget.classList.add('btnForWeb')
+                t.currentTarget.classList.remove('btnForWebHover')
+                t.currentTarget.classList.remove('backGroundResume');
+            })
+        }else{
+
+            x.addEventListener('mouseenter', (t) => {
+                
+                t.currentTarget.classList.add('navBarLinksHover')
+                
+            })
+            x.addEventListener('mouseleave', (t) => {
+                
+                t.currentTarget.classList.remove('navBarLinksHover')
+            })
         }
     })
     btnForMobile.remove()

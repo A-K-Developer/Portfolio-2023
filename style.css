@@ -292,6 +292,7 @@ nav {
     display: flex;
     flex-direction: column;
     text-align: start;
+    margin-top: 150px;
     gap: 10px;
 }
 
@@ -631,17 +632,28 @@ nav {
     color: var(--greenColor);
 }
 
+#socialNetworks{
+    display: none;
+}
+#emailLine{
+    display: none;
+}
+
 @media(min-width:600px) {
 
     h1 {
         font-size: var(--fontForWeb);
         color: antiquewhite;
+        font-size: 40px;
     }
 
     p {
         font-size: var(--fontForWebP);
+        font-size: 20px;
     }
-
+    h4{
+        font-size: 20px;
+    }
 
     main {
         padding: 0 20%;
@@ -680,16 +692,67 @@ nav {
         text-align: center;
         font-family: 'Permanent Marker', cursive;
     }
+    .navBarLinksHover a{
+        color: var(--greenColor);
+    }
 
     .btnForWeb {
-        font-size: 9px;
+        font-size: 14px;
         border: groove 1px  var(--greenColor);
-        padding: 5px 10px;
+        padding: 11px 22px;
+        border-radius: 3px;
     }
     .btnForWeb a{
         color: var(--greenColor);
     }
+    .btnForWebHover a{
+        font-size: 14px;
+        backdrop-filter: blur(1px);
+        color: whitesmoke;
+        
+    }
+    .btnForWebHover {
+        font-size: 9px;
+        border: groove 1px  whitesmoke;
+        padding: 11px 22px;
+        border-radius: 3px;
+    }
+    .backGroundResume{
+        background-color: #014032;
+        backdrop-filter: blur(21px);
+    }
+    .btnForWebGreen a{
+        color: var(--greenColor);
+    }
     .projects{
         cursor:pointer;
+    }
+    #greeting{
+        margin-top: 90px;
+    }
+    #emailLine{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        bottom: 30%;
+        right: -6%;
+    }
+    .line{
+        transform: rotate(180deg);
+        width: 2px;
+        height: 135px;
+        background-color: var(--colorParag);
+        position: fixed;
+        bottom: 0%;
+        right: 1.6%;
+    }
+    #emailLine p{
+        transform: rotate(90deg);
+    }
+    #socialNetworks{
+
+    }
+    #socialNetworks div{
+
     }
 }
