@@ -168,6 +168,7 @@ nav {
 
 .boxForNav {
     box-shadow: 2px 2px 5px #002760;
+    background-color: var(--backgroundColor);
 }
 
 #btnForMobile div {
@@ -318,7 +319,7 @@ nav {
 
 #aboutMe {
     width: 90%;
-    height: 120vh;
+    height: 800px;
     padding: 20px;
 }
 
@@ -339,6 +340,7 @@ nav {
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 40px;
+    justify-content: space-between;
 }
 
 .listOfSkills li {
@@ -724,6 +726,9 @@ nav {
     .btnForWebGreen a{
         color: var(--greenColor);
     }
+    #aboutMe{
+        height: 1100px;
+    }
     .projects{
         cursor:pointer;
     }
@@ -734,25 +739,82 @@ nav {
         display: flex;
         flex-direction: column;
         position: fixed;
-        bottom: 30%;
+        bottom: 0%;
         right: -6%;
+        gap: 90px;
     }
     .line{
         transform: rotate(180deg);
         width: 2px;
         height: 135px;
         background-color: var(--colorParag);
-        position: fixed;
-        bottom: 0%;
-        right: 1.6%;
+       position: relative;
+       left: 49%;
+       
     }
     #emailLine p{
         transform: rotate(90deg);
     }
     #socialNetworks{
-
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        left: 5%;
+        bottom: 0%;
+        gap: 10px;
     }
     #socialNetworks div{
 
     }
+    .github{
+        background-image: url(./img/github.png);
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+    }
+    .githubHover{
+        background-image: url(./img/githubHover.png);
+        margin-bottom: 5px;
+    }
+    .insta{
+        background-image: url(./img/instagramweb.png);
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+    }
+    .instaHover{
+        background-image: url(./img/instagramHover.png);
+        margin-bottom: 5px;
+    }
+    .twiter{
+        background-image: url(./img/twitter.png);
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+    }
+    .twiterHover{
+        background-image: url(./img/twitterHover.png);
+        margin-bottom: 5px;
+    }
+    .linkedIn{
+        background-image: url(./img/linkedinweb.png);
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+    }
+    .linkedInHover{
+        background-image: url(./img/linkedinHover.png);
+        margin-bottom: 5px;
+    }
+    .facebook{
+        background-image: url(./img/facebookWeb.png);
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+    }
+    .facebookHover{
+        background-image: url(./img/facebookForWebHover.png);
+        margin-bottom: 5px;
+    }
+
 }

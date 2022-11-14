@@ -426,14 +426,10 @@ if(screen.width > 700){
                 t.currentTarget.classList.remove('backGroundResume');
             })
         }else{
-
             x.addEventListener('mouseenter', (t) => {
-                
                 t.currentTarget.classList.add('navBarLinksHover')
-                
             })
             x.addEventListener('mouseleave', (t) => {
-                
                 t.currentTarget.classList.remove('navBarLinksHover')
             })
         }
@@ -444,3 +440,48 @@ if(screen.width > 700){
 }else{
 
 }
+let socialContainer = Array.from(document.getElementById('socialNetworks').children);
+
+socialContainer.forEach(x => {
+    x.addEventListener('mouseover', (e) =>{ 
+        let className = e.currentTarget.classList ;
+        if(className == 'github'){
+            e.currentTarget.classList.add('githubHover')
+            e.currentTarget.addEventListener('click',() =>{
+                window.open('https://github.com/A-K-Developer?tab=repositories')
+            } )
+        }else if(className =='facebook'){
+            e.currentTarget.classList.add('facebookHover')
+            window.open('https://www.facebook.com/asen.krushkov.3')
+        }else if(className =='twiter'){
+ 
+            e.currentTarget.classList.add('twiterHover')
+        }else if(className =='linkedIn'){
+            window.open('https://www.linkedin.com/in/asen-krushkov-261977229/')
+            e.currentTarget.classList.add('linkedInHover')
+        }else if(className =='insta'){
+            e.currentTarget.classList.add('instaHover')
+            window.open('https://www.instagram.com/krushkow1312/')
+        }
+    })
+    x.addEventListener('mouseleave', (e)=>{
+        let className = e.currentTarget.classList ;
+        console.log(className);
+        if(className[0] == 'github'){
+            e.currentTarget.classList.remove('githubHover')
+            console.log('here');
+        }else if(className[0] =='facebook'){
+            e.currentTarget.classList.remove('facebookHover');
+     
+        }else if(className[0] =='twiter'){
+            e.currentTarget.classList.remove('twiterHover');
+   
+        }else if(className[0] =='linkedIn'){
+            e.currentTarget.classList.remove('linkedInHover');
+      
+        }else if(className[0] =='insta'){
+            e.currentTarget.classList.remove('instaHover');
+    
+        }
+    })
+})
