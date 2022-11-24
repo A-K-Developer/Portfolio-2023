@@ -1010,24 +1010,26 @@ nav {
    
     @keyframes action2 {
         from {
-            top: 87.5%;
-            left: 11%;
+            top:87.5%;
+            left :11%
+            
         }
     
         to {
-            top: 87.5%;
-            left: 30%;
+            top:87.5%;
+            left :30%
+            
         }
     }
     @keyframes action1 {
         from {
-            top: 90%;
-            left: 10%;
+            top:90%;
+            left :10%
         }
     
         to {
-            top: 87.5%;
-            left: 11%;
+            top:87.5%;
+            left :11%
         }
     }
     .pointK{
@@ -1084,163 +1086,8 @@ nav {
         animation: action13K 0.5s ease-in-out 0s 1 alternate;
     }
     .actionFourthK{
-        animation: action14K 0.5s ease-in-out 0s 1 alternate;
+        animation: action14K 0.2s ease-in-out 0s 1 alternate;
+        
     }
     
-    @keyframes action14K {
-        from {
-            top: 90% ;
-            left: 55%;
-        }
-    
-        to {
-            top: 90% ;
-            left: 50%;
-        }
-    }
-    @keyframes action13K {
-        from {
-            top: 60% ;
-            left: 55%;
-        }
-    
-        to {
-            top: 90% ;
-            left: 55%;
-        }
-    }
-    @keyframes action12K {
-        from {
-            top: 60% ;
-            left: 50%;
-        }
-    
-        to {
-            top: 60% ;
-            left: 55%;
-        }
-    }
-    @keyframes action11K {
-        from {
-            top: 75% ;
-            left: 50%;
-        }
-    
-        to {
-            top: 60% ;
-            left: 50%;
-        }
-    }
-    @keyframes action10K {
-        from {
-            top: 75% ;
-            left: 70%;
-        }
-    
-        to {
-            top: 75% ;
-            left: 50%;
-        }
-    }
-    @keyframes action9K {
-        from {
-            top: 60%;
-            left: 80%; 
-        }
-    
-        to {
-            top: 75% ;
-            left: 70%;
-        }
-    }
-    
-    @keyframes action8K {
-        from {
-            top: 60%;
-            left: 70%;
-        }
-    
-        to {
-            top: 60%;
-            left: 80%; 
-        }
-    }
-    @keyframes action7K {
-        from {
-            top: 75%;
-            left: 62.5%;
-        }
-    
-        to {
-            top: 60%;
-            left: 70%; 
-        }
-    }
-    @keyframes action6K {
-        from {
-            top: 80%;
-            left: 62.5%;
-        }
-    
-        to {
-            top: 75%;
-            left: 62.5%;
-        }
-    }
-    @keyframes action5K {
-        from {
-            top: 90%;
-            left: 70%;
-        }
-    
-        to {
-            top: 80%;
-            left: 62.5%;
-        }
-    }
-    @keyframes action4K {
-        from {
-            top: 90%;
-            left: 80%;
-        }
-    
-        to {
-            top: 90%;
-            left: 70%;
-        }
-    }
-    @keyframes action3K {
-        from {
-            top: 80%;
-            left: 70%;
-        }
-    
-        to {
-            top: 90%;
-            left: 80%;
-        }
-    }
-   
-    @keyframes action2K {
-        from {
-            top: 80%;
-            left: 50%;
-        }
-    
-        to {
-            top: 80%;
-            left: 70%;
-        }
-    }
-    @keyframes action1K {
-        from {
-            top: 90%;
-            left: 50%;
-        }
-    
-        to {
-            top: 80%;
-            left: 50%;
-        }
-    }
 }

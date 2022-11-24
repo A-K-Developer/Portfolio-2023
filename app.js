@@ -1,6 +1,5 @@
 pdfListener('basicPdf', 'fundamentalsPdf', 'advancedPdf')
 createNavBtn()
-
 function classControl(type, typeName, parent, addClasses, removeClass, changeStyle, textContent) {
     let element;
     if (type == 'id') {
@@ -35,7 +34,6 @@ function classControl(type, typeName, parent, addClasses, removeClass, changeSty
 
     return element
 }
-
 function btnFunc(arg) {
     let btnForMobile = classControl('id', 'btnForMobile', '', '', '', '')
     let longLine = classControl('query', '.longLine', btnForMobile, '', '', '');
@@ -69,7 +67,6 @@ function btnFunc(arg) {
         }, 900)
     }
 }
-
 function createNavBtn() {
     let nav = document.getElementsByTagName('nav')[0];
     createElement('div', nav, '', '', '', ['logo'], '', '', '');
@@ -79,7 +76,6 @@ function createNavBtn() {
     createElement('div', div, '', '', '', ['middleLine'], '', '', '')
     createElement('div', div, '', '', '', ['shortLine'], '', '', '')
 }
-
 function createElement(type, parent, id, attributeArr,
     eventListenerArr, classArr, action, context, makeh3case) {
 
@@ -116,7 +112,6 @@ function createElement(type, parent, id, attributeArr,
 
     return container
 }
-
 function createNavBarMenu() {
 
     let nav = document.getElementsByTagName('nav')[0];
@@ -159,11 +154,8 @@ function createNavBarMenu() {
     })
 
 }
-
-
 let i = 0;
 let hash = [];
-
 function changeColor() {
     let containerClass = 'skills'
     let ul = document.getElementsByClassName(containerClass);
@@ -178,6 +170,24 @@ function changeColor() {
     }
 }
 setInterval(changeColor, 1010)
+function animateMyCSS(element,animation,prefix){
+    new Promise((resolve,reject) => {
+        let animationName = `${prefix}${animation}`;
+        element.classList.add(`${prefix}animated`, animationName);
+        resolve('Animation ended')
+        node.addEventListener('animationend',handleAnimationEnd,{once:true});
+        
+        function handleAnimationEnd(event) {
+            event.stopPropagation();
+            node.classList.remove(`${prefix}animated`, animationName);
+            resolve('Animation ended');
+        }
+
+    })
+}
+
+
+
 const animateCSS = (element, animation, prefix = 'imgFrame') =>
     // We create a Promise and return it
     new Promise((resolve, reject) => {
@@ -186,13 +196,13 @@ const animateCSS = (element, animation, prefix = 'imgFrame') =>
 
         node.classList.add(`${prefix}animated`, animationName);
 
-        // When the animation ends, we clean the classes and resolve the Promise
         function handleAnimationEnd(event) {
             event.stopPropagation();
             node.classList.remove(`${prefix}animated`, animationName);
             resolve('Animation ended');
         }
-
+        // When the animation ends, we clean the classes and resolve the Promise
+        
         node.addEventListener('animationend', handleAnimationEnd, {
             once: true
         });
@@ -203,7 +213,6 @@ animateCSS('.imgFrame', 'Ani').then((message) => {
         console.log('koi');
     })
 })
-
 function frameAni() {
     let imgFrame = document.getElementsByClassName('imgFrame')[0];
     imgFrame.classList.add('imgFrameAni');
@@ -213,26 +222,21 @@ function frameAni() {
     })
 }
 setInterval(frameAni, 1010)
-
 function showResume() {
     let pdf = './img/AsenKrushkovCV2021.pdf';
     window.open(pdf)
 }
-
 function showBasic() {
     let pdf = './img/Basics.pdf';
     window.open(pdf);
 }
-
 function showFundamentals() {
     let pdf = './img/Fundamentals.pdf';
     window.open(pdf);
 }
-
 function goToGitHubJSAdvanced() {
     window.location.href = 'https://github.com/A-K-Developer/JS-Advanced.git'
 }
-
 function putLineAfterHeader() {
     let headers = Array.from(document.getElementsByClassName('header'));
 
@@ -242,7 +246,6 @@ function putLineAfterHeader() {
     })
 }
 putLineAfterHeader();
-
 let projects = document.getElementsByClassName('projects');
 projects[0].addEventListener('click', createFirstProject)
 projects[1].addEventListener('click', createSecondProject)
@@ -254,7 +257,6 @@ let left = lineClass.querySelector('.left');
 let right = lineClass.querySelector('.right');
 let middle = lineClass.querySelector('.middle');
 let video = main.querySelectorAll('.video');
-
 
 function createFirstProject() {
     projects[0].style.color = '#64ffda'
@@ -286,7 +288,6 @@ const scrollToDiv = (id) => {
     const element = document.getElementById(id);
     element.scrollTop = element.scrollHeight;
 }
-
 function createSecondProject() {
     projects[0].style.color = '#8892b0'
     projects[1].style.color = '#64ffda'
@@ -315,7 +316,6 @@ function createSecondProject() {
     })
 
 }
-
 function createThirthProject() {
     projects[0].style.color = '#8892b0'
     projects[1].style.color = '#8892b0'
@@ -343,9 +343,6 @@ function createThirthProject() {
     })
 
 }
-
-
-
 function createVideo(container, videopath) {
     let video = document.createElement('video');
     video.setAttribute('controls', "")
@@ -363,8 +360,6 @@ function createVideo(container, videopath) {
     container.appendChild(video)
 
 }
-
-
 function projectTemplate(arr, main) {
     let container = createElement('div', main, '', '', '', ['projectContainer'], '', '', '')
     createElement('h3', container, '', '', '', '', '', arr.shift(), '');
@@ -377,7 +372,6 @@ function projectTemplate(arr, main) {
         }
     })
 }
-
 function pdfListener(arg, arg1, arg2) {
     document.getElementById(arg).addEventListener('click', showBasic)
     document.getElementById(arg1).addEventListener('click', showFundamentals)
@@ -385,13 +379,11 @@ function pdfListener(arg, arg1, arg2) {
 
 }
 createFirstProject()
-
 function anchorTagFun() {
     let mainTag = document.getElementsByTagName('main')[0]
     mainTag.classList.remove('blurMain')
     btnFunc('nav')
 }
-
 function scrollNav() {
     const body = document.body;
     const header = body.querySelector("nav");
@@ -418,8 +410,6 @@ function scrollNav() {
     })
 }
 scrollNav()
-
-
 if (screen.width > 700) {
     createNavBarMenu()
     let btnForMobile = classControl('id', 'btnForMobile', '', '', '', '')
@@ -517,176 +507,23 @@ email.addEventListener('click', () => {
     email.classList.add('emailColor')
 
 })
-
-let body = document.getElementsByTagName('body')[0];
-let canvas = document.createElement('div');
-canvas.id = 'canvasForLogo'
-
-
-
-
-
-body.appendChild(canvas)
-
-let intervalID
-let intervalIDK= setInterval(writeLogoK,200);
-
-
-startWrite()
-setTimeout(function () {
-    stopWrite();
-}, 11000);
-
-function stopWrite() {
-    clearInterval(intervalID)
-    clearInterval(intervalIDK);
-}
-
-let stop = true
-function writeLogoK() {
-    if(stop){
-
-   
-    let point = document.createElement('div');
-
-    point.classList.add('pointK');
-    canvas.appendChild(point)
-    point.classList.add('actionOneK');
-    point.addEventListener('animationend', () => {
-        point.classList.remove('actionOneK')
-        point.classList.add('actionTwoK');
-
-        point.addEventListener('animationend', () => {
-            point.classList.remove('actionTwoK');
-            point.classList.add('actionThreeK');
-
-            point.addEventListener('animationend', () => {
-                point.classList.remove('actionThreeK');
-                point.classList.add('actionFourK');
-
-                point.addEventListener('animationend', () => {
-                    point.classList.remove('actionFourK');
-                    point.classList.add('actionFiveK');
-
-                    point.addEventListener('animationend', () => {
-                        point.classList.remove('actionFiveK');
-                        point.classList.add('actionSixK');
-
-                        point.addEventListener('animationend', () => {
-                            point.classList.remove('actionSixK');
-                            point.classList.add('actionSevenK');
-
-                            point.addEventListener('animationend', () => {
-                                point.classList.remove('actionSevenK');
-                                point.classList.add('actionEightK');
-
-                                point.addEventListener('animationend', () => {
-                                    point.classList.remove('actionEightK');
-                                    point.classList.add('actionNineK');
-
-                                    point.addEventListener('animationend', () => {
-                                        point.classList.remove('actionNineK');
-                                        point.classList.add('actionTenK');
-
-                                        point.addEventListener('animationend', () => {
-                                            point.classList.remove('actionTenK');
-                                            point.classList.add('actionElevenK');
-                                            point.addEventListener('animationend', () => {
-
-                                                canvas.removeChild(point)
-                                                clearInterval(intervalIDK);
-                                                
-                                                setTimeout(function () {
-                                                    clearInterval(intervalIDK);
-                                                    stop = true;
-                                                }, 2000);
-
-                                            })
-                                        })
-                                    })
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    })
-}
-}
-
-function writeLogo() {
-    let point = document.createElement('div');
-    point.classList.add('point');
-    canvas.appendChild(point)
-    point.classList.add('actionOne');
-    point.addEventListener('animationend', () => {
-        point.classList.remove('actionOne')
-        point.classList.add('actionTwo');
-
-        point.addEventListener('animationend', () => {
-            point.classList.remove('actionTwo');
-            point.classList.add('actionThree');
-
-            point.addEventListener('animationend', () => {
-                point.classList.remove('actionThree');
-                point.classList.add('actionFour');
-
-                point.addEventListener('animationend', () => {
-                    point.classList.remove('actionFour');
-                    point.classList.add('actionFive');
-
-                    point.addEventListener('animationend', () => {
-                        point.classList.remove('actionFive');
-                        point.classList.add('actionSix');
-
-                        point.addEventListener('animationend', () => {
-                            point.classList.remove('actionSix');
-                            point.classList.add('actionSeven');
-
-                            point.addEventListener('animationend', () => {
-                                point.classList.remove('actionSeven');
-                                point.classList.add('actionEight');
-
-                                point.addEventListener('animationend', () => {
-                                    point.classList.remove('actionEight');
-                                    point.classList.add('actionNine');
-
-                                    point.addEventListener('animationend', () => {
-                                        point.classList.remove('actionNine');
-                                        point.classList.add('actionTen');
-
-                                        point.addEventListener('animationend', () => {
-                                            canvas.removeChild(point)
-                                            stopWrite();
-
-                                           
-
-                                            setTimeout(function () {
-                                                stopWrite();
-                                                clearInterval(intervalIDK);
-                                            }, 5000);
-                                        })
-                                    })
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    })
-
-}
-function startKlogo(){
+let body = document.getElementsByTagName('body')[0]
+function makeNiceParagraph(body){
+    let parragraphs = body.querySelectorAll('p');
     
-}
-function startWrite() {
-    intervalID = setInterval(writeLogo, 200)
-    //
-    setTimeout(function () {
-        console.log('stop ME');
-        return
-    }, 15000);
+    console.log(parragraphs.length);
+    for(let i = 0; i < parragraphs.length; i++){
+        let oneSec = parragraphs[i].textContent
+        for(let y = 0; y< oneSec.length; y++){
+            oneSec[y].addEventListener('onmouserover',()=>{
+                oneSec[y].style.color = '#fff';
+            })
+        }
+        
+      
+    }   
+
 
 }
+
+makeNiceParagraph(body)
