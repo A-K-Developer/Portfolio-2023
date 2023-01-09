@@ -208,9 +208,9 @@ const animateCSS = (element, animation, prefix = 'imgFrame') =>
         });
     });
 animateCSS('.imgFrame', 'Ani').then((message) => {
-    console.log('koi si ti');
+    
     animateCSS('.imgFrame', 'Rev').then((message) => {
-        console.log('koi');
+        
     })
 })
 function frameAni() {
@@ -406,7 +406,7 @@ function scrollNav() {
 
         }
         lastScroll = currentScroll;
-        console.log(lastScroll);
+        
     })
 }
 scrollNav()
@@ -442,7 +442,7 @@ if (screen.width > 700) {
 
 
 } else {
-
+    
 }
 let socialContainer = Array.from(document.getElementById('socialNetworks').children);
 
@@ -511,13 +511,10 @@ let body = document.getElementsByTagName('body')[0]
 function makeNiceParagraph(body){
     let parragraphs = body.querySelectorAll('p');
     
-    console.log(parragraphs.length);
+    
     for(let i = 0; i < parragraphs.length; i++){
         let oneSec = parragraphs[i].textContent
         for(let y = 0; y< oneSec.length; y++){
-            oneSec[y].addEventListener('onmouserover',()=>{
-                oneSec[y].style.color = '#fff';
-            })
         }
         
       

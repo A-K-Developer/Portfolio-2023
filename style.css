@@ -506,6 +506,7 @@ nav {
     position: absolute;
     right: 5%;
     top: 10%;
+    cursor: pointer;
 
 }
 
@@ -1089,5 +1090,7 @@ nav {
         animation: action14K 0.2s ease-in-out 0s 1 alternate;
         
     }
-    
+    #socialContainer{
+        display: none;
+    }
 }
