@@ -28,7 +28,7 @@ h3{
 
 .h4 {
     color: var(--colorParag);
-    font-size: 18px;
+    font-size: 17px;
     font-family: var(--fontCaveat);
 }
 
@@ -41,7 +41,7 @@ h1 {
 
 .pGreeting{
     color: var(--colorParag);
-    font-size: 13px;
+    font-size: 17px;
     font-family: var(--fontCaveat);
 
 }
@@ -297,7 +297,6 @@ nav {
 #greeting {
     width: 80%;
     height: 100vh;
-    padding: 25px;
     position: relative;
     top: 100px;
     display: flex;
@@ -310,6 +309,7 @@ nav {
 .motive {
     font-family: 'Permanent Marker', cursive;
     color: aliceblue;
+    font-size: 23px;
 }
 
 .btn {
@@ -326,7 +326,7 @@ nav {
 }
 .btn:hover{
     background-color: var(--greenColor);
-    color: var(--backgroundColor);
+    color: aliceblue;
 }
 
 .btn a {
