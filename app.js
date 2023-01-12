@@ -5,8 +5,12 @@ function classControl(type, typeName, parent, addClasses, removeClass, changeSty
     if (type == 'id') {
         element = document.getElementById(typeName);
     } else if (type == 'query') {
+        if(screen.width < 900){
 
-        element = parent.querySelector(typeName);
+       
+            element = parent.querySelector(typeName);
+        }
+        
     } else if (type == 'class') {
         element = document.getElementsByClassName(typeName)[0];
     } else if (type == 'tag') {
@@ -43,7 +47,9 @@ function btnFunc(arg) {
         createNavBarMenu();
         classControl('tag', 'nav', '', ['btnFixed'], '', '');
     }
-
+    if(screen.width < 800){
+        console.log('hi');
+    
     if (longLine.style.display == 'none') {
         classControl('tag', 'main', '', '', ['blurMain'], '');
         classControl('query', '.longLine', btnForMobile, ['longLineAni2'], ['longLineAni'], 'hide');
@@ -66,6 +72,7 @@ function btnFunc(arg) {
             classControl('query', '.shortLine', btnForMobile, '', ['shortLineAni', 'shortLineAni2'], 'show');
         }, 900)
     }
+}
 }
 function createNavBtn() {
     let nav = document.getElementsByTagName('nav')[0];
@@ -281,7 +288,7 @@ function createFirstProject() {
     createVideo(main, './img/KogeMap.mp4')
     let icon = main.querySelector('.iconForProject');
     icon.addEventListener('click', () => {
-        window.location.href = 'https://a-k-developer.github.io/KogeMap/'
+        window.open('https://a-k-developer.github.io/KogeMap/') 
     })
 }
 const scrollToDiv = (id) => {
@@ -312,7 +319,7 @@ function createSecondProject() {
 
     let icon = main.querySelector('.iconForProject');
     icon.addEventListener('click', () => {
-        window.location.href = 'https://a-k-developer.github.io/District-Tonkin/'
+        window.open('https://a-k-developer.github.io/District-Tonkin/')
     })
 
 }
@@ -339,7 +346,7 @@ function createThirthProject() {
     //createBtn(main);
     let icon = main.querySelector('.iconForProject');
     icon.addEventListener('click', () => {
-        window.location.href = ' https://a-k-developer.github.io/Survival-Guide/'
+        window.open(' https://a-k-developer.github.io/Survival-Guide/')
     })
 
 }
@@ -372,6 +379,7 @@ function projectTemplate(arr, main) {
         }
     })
 }
+
 function pdfListener(arg, arg1, arg2) {
     document.getElementById(arg).addEventListener('click', showBasic)
     document.getElementById(arg1).addEventListener('click', showFundamentals)
