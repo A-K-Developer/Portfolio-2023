@@ -25,7 +25,7 @@ setTimeout(function () {
 }, 10000);
 
 let stop = true
-/*
+
 function writeLogoK() {
     let point = document.createElement('div');
     point.classList.add('pointK');
@@ -72,7 +72,7 @@ function writeLogoK() {
         })
     })
 }
-*/
+
 
 function writeLogoK() {
     let createDiv = setInterval(()=>{

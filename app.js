@@ -1,5 +1,6 @@
 pdfListener('basicPdf', 'fundamentalsPdf', 'advancedPdf')
 createNavBtn()
+
 function classControl(type, typeName, parent, addClasses, removeClass, changeStyle, textContent) {
     let element;
     if (type == 'id') {
@@ -264,6 +265,34 @@ let left = lineClass.querySelector('.left');
 let right = lineClass.querySelector('.right');
 let middle = lineClass.querySelector('.middle');
 let video = main.querySelectorAll('.video');
+let logo = document.querySelector('.logo');
+let cursorShade = document.getElementById('cursorShade');
+let img = document.querySelector('.imgOpacity');
+
+img.onmousemove = function(e){
+    cursorShade.style.left = (e.pageX - 25) + 'px';
+    cursorShade.style.top = (e.pageY- 25)+ 'px';
+
+}
+img.addEventListener('mouseenter',()=>{
+    if(cursorShade.style.display == 'none'){
+
+        cursorShade.style.display ='block';
+    }
+})
+img.onmouseout = function(e){
+    if(cursorShade.style.display = 'block'){
+
+        cursorShade.style.display ='none'
+    }
+}
+
+function scrollToTop(element){
+    element.addEventListener('click',() => {
+        window.scrollTo(0,0)
+    })
+}
+scrollToTop(logo);
 
 function createFirstProject() {
     projects[0].style.color = '#64ffda'

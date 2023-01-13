@@ -16,9 +16,7 @@ body {
     background-color: #0a192f;
     margin: 0;
 }
-h3{
-    cursor: default;
-}
+
 .myName{
 
     color: var(--greenColor);
@@ -27,7 +25,7 @@ h3{
 }
 
 .h4 {
-    color: inherit;
+    color: var(--colorParag);
     font-size: 17px;
     font-family: var(--fontCaveat);
 }
@@ -37,7 +35,7 @@ h1 {
     color: aliceblue;
     font-size: 28px;
     margin: 0;
-}/*
+}
 
 .pGreeting{
     color: var(--colorParag);
@@ -54,6 +52,7 @@ p{
     color: var(--colorParag);
 }
 
+
 span {
     color: var(--greenColor);
 }
@@ -66,6 +65,15 @@ li {
 
 a {
     color: #e6f1ff;
+}
+#cursorShade{
+    height: 250px;
+    width: 250px;
+    background-image: url('./img/fireworks.gif') ;
+    background-position: center;
+    position: absolute;
+    transition-duration: 0s;
+    transition-timing-function:ease-in ;
 }
 
 nav {
@@ -282,6 +290,7 @@ nav {
 .navBarLinks h3 {
     margin: 2px;
     color: var(--greenColor);
+    cursor: url('./img/pointer.png'),auto;
 }
 
 .navBarLinks a {
@@ -322,7 +331,9 @@ nav {
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
-    font-family: var(--fontPermanent)
+    font-family: var(--fontPermanent);
+    cursor: url('./img/pointer.png'),auto;
+
 }
 .btn:hover{
     background-color: var(--greenColor);
@@ -332,6 +343,7 @@ nav {
 .btn a {
     
     color: var(--greenColor);
+    cursor:url('./img/pointer.png'),auto
 }
 .btn a:hover{
     color: aliceblue;
@@ -423,7 +435,9 @@ nav {
     width: 90%;
     height: 800px;
     font-size: 15px;
+
 }
+
 
 #projectsList {
     width: 100%;
@@ -543,7 +557,7 @@ nav {
     position: absolute;
     right: 5%;
     top: 20px;
-    cursor: pointer;
+    cursor: url('./img/pointer.png'),auto;
 
 }
 
@@ -586,6 +600,7 @@ nav {
 .skillLevel img {
     width: 30px;
     height: 30px;
+    cursor: url('./img/pointer.png'),auto;
 }
 
 .skillsz {
@@ -677,9 +692,14 @@ nav {
 }
 #emailLine{
     display: none;
+
 }
 .footer{
     font-size: 12px;
+}
+body{
+    cursor: url('./img/cursor.png'), auto;
+
 }
 
 @media(min-width:600px) {
@@ -720,6 +740,7 @@ nav {
         position: relative;
         background-color: transparent;
         height: 100px;
+       
     }
 
     .boxForNav {
@@ -729,10 +750,14 @@ nav {
     .navBarLinks {
         flex-direction: row;
         align-items: center;
+        cursor: url('./img/pointer.png'),auto;
+
     }
     .navBarLinks a{
         text-align: center;
         font-family: 'Permanent Marker', cursive;
+        cursor: url('./img/pointer.png'),auto;
+
     }
     .navBarLinksHover a{
         color: var(--greenColor);
@@ -743,6 +768,7 @@ nav {
         border: groove 1px  var(--greenColor);
         padding: 11px 22px;
         border-radius: 3px;
+
     }
     .btnForWeb a{
         color: var(--greenColor);
@@ -770,7 +796,7 @@ nav {
         height: 700px;
     }
     .projects{
-        cursor:pointer;
+        cursor: url('./img/pointer.png'),auto;
     }
     #greeting{
         margin-top: 0px;
@@ -782,10 +808,12 @@ nav {
         bottom: 0%;
         right: -6%;
         gap: 90px;
-        cursor: pointer;
+
     }
     #emailLine p{
         transform: rotate(90deg);
+    cursor: url('./img/pointer.png'),auto;
+
     }
     #emailLine:hover p{
         color: var(--greenColor);
@@ -819,7 +847,7 @@ nav {
         gap: 10px;
     }
     #socialNetworks div{
-
+        cursor: url('./img/pointer.png'),auto;
     }
     .socialNetworks img{
         width: 30px;
@@ -838,7 +866,8 @@ nav {
     .githubHover{
         background-image: url(./img/githubHover.png);
         margin-bottom: 5px;
-        cursor: pointer;
+        cursor: url('./img/pointer.png'),auto;
+
     }
     .insta{
         background-image: url(./img/instagramweb.png);
@@ -849,7 +878,8 @@ nav {
     .instaHover{
         background-image: url(./img/instagramHover.png);
         margin-bottom: 5px;
-        cursor: pointer;
+        cursor: url('./img/pointer.png'),auto;
+
     }
     .twiter{
         background-image: url(./img/twitter.png);
@@ -860,29 +890,36 @@ nav {
     .twiterHover{
         background-image: url(./img/twitterHover.png);
         margin-bottom: 5px;
-        cursor: pointer;
+        cursor: url('./img/pointer.png'),auto;
+
     }
     .linkedIn{
         background-image: url(./img/linkedinweb.png);
         width: 20px;
         height: 20px;
         background-size: contain;
+        cursor: url('./img/pointer.png'),auto;
+
     }
     .linkedInHover{
         background-image: url(./img/linkedinHover.png);
         margin-bottom: 5px;
-        cursor: pointer;
+        cursor: url('./img/pointer.png'),auto;
+
     }
     .facebook{
         background-image: url(./img/facebookWeb.png);
         width: 20px;
         height: 20px;
         background-size: contain;
+        cursor: url('./img/pointer.png'),auto;
+
     }
     .facebookHover{
         background-image: url(./img/facebookForWebHover.png);
         margin-bottom: 5px;
-        cursor: pointer;
+        cursor: url('./img/pointer.png'),auto;
+
     }
     .fadeOut {
         animation: fadeOuts 2s ease-in-out 0s 1 alternate;
