@@ -27,7 +27,7 @@ h3{
 }
 
 .h4 {
-    color: var(--colorParag);
+    color: inherit;
     font-size: 17px;
     font-family: var(--fontCaveat);
 }
@@ -37,7 +37,7 @@ h1 {
     color: aliceblue;
     font-size: 28px;
     margin: 0;
-}
+}/*
 
 .pGreeting{
     color: var(--colorParag);
