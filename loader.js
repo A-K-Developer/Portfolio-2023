@@ -26,6 +26,8 @@ setTimeout(function () {
 
 let stop = true
 
+let eventListener = (func)=> point.createEventLister('animatend', func);
+
 function writeLogoK() {
     let point = document.createElement('div');
     point.classList.add('pointK');
@@ -74,27 +76,25 @@ function writeLogoK() {
 }
 
 
-function writeLogoK() {
-    let createDiv = setInterval(()=>{
-        let point = document.createElement('div');
-        point.classList.add('pointK');
-        canvas.appendChild(point)
-
-    }, 1000)
-    setTimeout(function () {
-        clearInterval(createDiv)
-        console.log('delete')
-    }, 10000);
-    
-}                                      
+                      
 
 function writeLogo() {
     let point = document.createElement('div');
     point.classList.add('point');
     canvas.appendChild(point)
-    animateMyCSS(point,'One','action');
 
-    point.addEventListener('animationend', () => {
+    let arrClass = ['One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'];
+   for(let i = 0 ; arrClass.length; i++){
+    if(i !== 0){
+
+        animateMyCSS(point,arrClass[i],'action',arrClass[-1])
+    }else{
+        animateMyCSS(point,arrClass[i],'action')
+        
+    }
+
+   }
+        /* 
         animateMyCSS(point,'Two','action');
         point.addEventListener('animationend', () => {
             animateMyCSS(point,'Three','action');
@@ -125,39 +125,47 @@ function writeLogo() {
                 })
             })
         })
-    })
+        */
+
 }
+
 function startWrite() {
-    //intervalID = setInterval(writeLogo, 200)
+    intervalID = setInterval(writeLogo, 200)
 }
 
 function stopWrite() {
     clearInterval(intervalID)
     //clearInterval(intervalIDK);
 }
-function animateMyCSS(element,animation,prefix){
+function animateMyCSS(element,animation,prefix,oldClass){
     new Promise((resolve,reject) => {
         let animationName = `${prefix}${animation}`;
+
         element.classList.add(`${prefix}animated`, animationName);
+        if(oldClass){
+
+            element.classList.remove(`${prefix}${oldClass}`)
+        }
+
         resolve('Animation ended')
         element.addEventListener('animationend',handleAnimationEnd,{once:true});
-        
+        console.log(element);
         function handleAnimationEnd(event) {
             event.stopPropagation();
             element.classList.remove(`${prefix}animated`, animationName);
             resolve('Animation ended');
         }
+        
 
     })
 }
 
-writeLogoK();
 
 function animateCircle(){
     
     var circle = canvas.querySelector('div');
     
-    console.log(canvas.children);
+   
     if(circle !== null){
 
         
@@ -220,7 +228,7 @@ function animateCircle(){
             
         })
     }
-        console.log(animationPlayer);
+        
 }
 
 

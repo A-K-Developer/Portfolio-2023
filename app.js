@@ -1,6 +1,13 @@
 pdfListener('basicPdf', 'fundamentalsPdf', 'advancedPdf')
 createNavBtn()
 
+
+function printA(){
+    console.log(answer);
+    var answer = 1; 
+}
+
+printA()
 function classControl(type, typeName, parent, addClasses, removeClass, changeStyle, textContent) {
     let element;
     if (type == 'id') {
