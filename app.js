@@ -354,11 +354,9 @@ function createFourthProject() {
     let arr = [ 'Sustainable Website', 'Eco-Friendly Design', 'Green Hosting Solution', 'Optimized Performance', 'User-Centric Interface', 'Educational and Sustainable Content', '']
     projectTemplate(arr, main)
 
-    createVideo(main, './img/KogeMap.mp4')
-    let icon = main.querySelector('.iconForProject');
-    icon.addEventListener('click', () => {
-        window.open('https://a-k-developer.github.io/KogeMap/')
-    })
+    createVideo(main, './img/GreenLead.mp4')
+
+  
 
 }
 function createFifthProject() {
@@ -380,15 +378,12 @@ function createFifthProject() {
         main.removeChild(video);
 
     }
-    let arr = ['Website', '', 'Only Mobile Version Website', 'Everything is coded by me', '100% Vanila Javascript', '', '', '']
+    let arr = ['Watch-Shop', 'Transparency and Accountability', 'High-Quality Products and Credibility', 'Secure Payment Gateway', 'Marketing and Outreach', 'Proper Cause', '', '']
 
     projectTemplate(arr, main)
 
-    createVideo(main, './img/KogeMap.mp4')
-    let icon = main.querySelector('.iconForProject');
-    icon.addEventListener('click', () => {
-        window.open('https://a-k-developer.github.io/KogeMap/')
-    })
+    createVideo(main, './img/WatchShop.mp4')
+
 
 }
 const scrollToDiv = (id) => {
