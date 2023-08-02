@@ -2,9 +2,9 @@ pdfListener('basicPdf', 'fundamentalsPdf', 'advancedPdf')
 createNavBtn()
 
 
-function printA(){
+function printA() {
     console.log(answer);
-    var answer = 1; 
+    var answer = 1;
 }
 
 printA()
@@ -13,12 +13,12 @@ function classControl(type, typeName, parent, addClasses, removeClass, changeSty
     if (type == 'id') {
         element = document.getElementById(typeName);
     } else if (type == 'query') {
-        if(screen.width < 900){
+        if (screen.width < 900) {
 
-       
+
             element = parent.querySelector(typeName);
         }
-        
+
     } else if (type == 'class') {
         element = document.getElementsByClassName(typeName)[0];
     } else if (type == 'tag') {
@@ -55,32 +55,32 @@ function btnFunc(arg) {
         createNavBarMenu();
         classControl('tag', 'nav', '', ['btnFixed'], '', '');
     }
-    if(screen.width < 800){
+    if (screen.width < 800) {
         console.log('hi');
-    
-    if (longLine.style.display == 'none') {
-        classControl('tag', 'main', '', '', ['blurMain'], '');
-        classControl('query', '.longLine', btnForMobile, ['longLineAni2'], ['longLineAni'], 'hide');
-        classControl('query', '.shortLine', btnForMobile, ['shortLineAni2'], ['shortLineAni'], 'hide');
-        classControl('class', 'navForMobile', '', ['navForMobileAniBack'], ['navForMobileAni'], '')
-        setTimeout(() => {
-            nav.removeChild(showNav)
-            classControl('query', '.longLine', btnForMobile, '', ['longLineAni2'], 'hide');
-            classControl('query', '.shortLine', btnForMobile, '', ['shortLineAni2'], 'hide');
-        }, 900)
 
-    } else {
+        if (longLine.style.display == 'none') {
+            classControl('tag', 'main', '', '', ['blurMain'], '');
+            classControl('query', '.longLine', btnForMobile, ['longLineAni2'], ['longLineAni'], 'hide');
+            classControl('query', '.shortLine', btnForMobile, ['shortLineAni2'], ['shortLineAni'], 'hide');
+            classControl('class', 'navForMobile', '', ['navForMobileAniBack'], ['navForMobileAni'], '')
+            setTimeout(() => {
+                nav.removeChild(showNav)
+                classControl('query', '.longLine', btnForMobile, '', ['longLineAni2'], 'hide');
+                classControl('query', '.shortLine', btnForMobile, '', ['shortLineAni2'], 'hide');
+            }, 900)
 
-        classControl('tag', 'main', '', ['blurMain'], '', '');
-        classControl('query', '.longLine', btnForMobile, ['longLineAni'], ['longLineAni2'], 'hide');
-        classControl('query', '.shortLine', btnForMobile, ['shortLineAni'], ['shortLineAni2'], 'hide');
+        } else {
 
-        setTimeout(() => {
-            classControl('query', '.longLine', btnForMobile, '', ['longLineAni', 'longLineAni2'], 'show');
-            classControl('query', '.shortLine', btnForMobile, '', ['shortLineAni', 'shortLineAni2'], 'show');
-        }, 900)
+            classControl('tag', 'main', '', ['blurMain'], '', '');
+            classControl('query', '.longLine', btnForMobile, ['longLineAni'], ['longLineAni2'], 'hide');
+            classControl('query', '.shortLine', btnForMobile, ['shortLineAni'], ['shortLineAni2'], 'hide');
+
+            setTimeout(() => {
+                classControl('query', '.longLine', btnForMobile, '', ['longLineAni', 'longLineAni2'], 'show');
+                classControl('query', '.shortLine', btnForMobile, '', ['shortLineAni', 'shortLineAni2'], 'show');
+            }, 900)
+        }
     }
-}
 }
 function createNavBtn() {
     let nav = document.getElementsByTagName('nav')[0];
@@ -185,13 +185,13 @@ function changeColor() {
     }
 }
 setInterval(changeColor, 1010)
-function animateMyCSS(element,animation,prefix){
-    new Promise((resolve,reject) => {
+function animateMyCSS(element, animation, prefix) {
+    new Promise((resolve, reject) => {
         let animationName = `${prefix}${animation}`;
         element.classList.add(`${prefix}animated`, animationName);
         resolve('Animation ended')
-        node.addEventListener('animationend',handleAnimationEnd,{once:true});
-        
+        node.addEventListener('animationend', handleAnimationEnd, { once: true });
+
         function handleAnimationEnd(event) {
             event.stopPropagation();
             node.classList.remove(`${prefix}animated`, animationName);
@@ -217,15 +217,15 @@ const animateCSS = (element, animation, prefix = 'imgFrame') =>
             resolve('Animation ended');
         }
         // When the animation ends, we clean the classes and resolve the Promise
-        
+
         node.addEventListener('animationend', handleAnimationEnd, {
             once: true
         });
     });
 animateCSS('.imgFrame', 'Ani').then((message) => {
-    
+
     animateCSS('.imgFrame', 'Rev').then((message) => {
-        
+
     })
 })
 function frameAni() {
@@ -265,6 +265,8 @@ let projects = document.getElementsByClassName('projects');
 projects[0].addEventListener('click', createFirstProject)
 projects[1].addEventListener('click', createSecondProject)
 projects[2].addEventListener('click', createThirthProject);
+projects[3].addEventListener('click', createFourthProject);
+projects[4].addEventListener('click', createFifthProject)
 
 let main = document.getElementById('contentForProject');
 let lineClass = document.getElementsByClassName('lineUnder')[0];
@@ -276,27 +278,27 @@ let logo = document.querySelector('.logo');
 let cursorShade = document.getElementById('cursorShade');
 let img = document.querySelector('.imgOpacity');
 
-img.onmousemove = function(e){
+img.onmousemove = function (e) {
     cursorShade.style.left = (e.pageX - 25) + 'px';
-    cursorShade.style.top = (e.pageY- 25)+ 'px';
+    cursorShade.style.top = (e.pageY - 25) + 'px';
 
 }
-img.addEventListener('mouseenter',()=>{
-    if(cursorShade.style.display == 'none'){
+img.addEventListener('mouseenter', () => {
+    if (cursorShade.style.display == 'none') {
 
-        cursorShade.style.display ='block';
+        cursorShade.style.display = 'block';
     }
 })
-img.onmouseout = function(e){
-    if(cursorShade.style.display = 'block'){
+img.onmouseout = function (e) {
+    if (cursorShade.style.display = 'block') {
 
-        cursorShade.style.display ='none'
+        cursorShade.style.display = 'none'
     }
 }
 
-function scrollToTop(element){
-    element.addEventListener('click',() => {
-        window.scrollTo(0,0)
+function scrollToTop(element) {
+    element.addEventListener('click', () => {
+        window.scrollTo(0, 0)
     })
 }
 scrollToTop(logo);
@@ -305,10 +307,13 @@ function createFirstProject() {
     projects[0].style.color = '#64ffda'
     projects[1].style.color = '#8892b0'
     projects[2].style.color = '#8892b0'
+    projects[3].style.color = '#8892b0'
+    projects[4].style.color = '#8892b0'
+
 
     left.style.width = '0%';
-    middle.style.width = '30%'
-    right.style.width = '70%';
+    middle.style.width = '15%'
+    right.style.width = '85%';
 
     let div = main.querySelector('div');
     let video = main.querySelector('video')
@@ -324,8 +329,67 @@ function createFirstProject() {
     createVideo(main, './img/KogeMap.mp4')
     let icon = main.querySelector('.iconForProject');
     icon.addEventListener('click', () => {
-        window.open('https://a-k-developer.github.io/KogeMap/') 
+        window.open('https://a-k-developer.github.io/KogeMap/')
     })
+}
+function createFourthProject() {
+    projects[0].style.color = '#8892b0'
+    projects[1].style.color = '#8892b0'
+    projects[2].style.color = '#8892b0'
+    projects[3].style.color = '#64ffda'
+    projects[4].style.color = '#8892b0'
+
+    left.style.width = '65%';
+    middle.style.width = '20%'
+    right.style.width = '15%';
+
+    let div = main.querySelector('div');
+    let video = main.querySelector('video')
+
+     if (div) {
+        main.removeChild(div);
+        main.removeChild(video);
+
+    }
+    let arr = [ 'Sustainable Website', 'Eco-Friendly Design', 'Green Hosting Solution', 'Optimized Performance', 'User-Centric Interface', 'Educational and Sustainable Content', '']
+    projectTemplate(arr, main)
+
+    createVideo(main, './img/KogeMap.mp4')
+    let icon = main.querySelector('.iconForProject');
+    icon.addEventListener('click', () => {
+        window.open('https://a-k-developer.github.io/KogeMap/')
+    })
+
+}
+function createFifthProject() {
+    projects[0].style.color = '#8892b0'
+    projects[1].style.color = '#8892b0'
+    projects[2].style.color = '#8892b0'
+    projects[3].style.color = '#8892b0'
+    projects[4].style.color = '#64ffda'
+
+    left.style.width = '85%';
+    middle.style.width = '15%'
+    right.style.width = '0%';
+
+    let div = main.querySelector('div');
+    let video = main.querySelector('video')
+
+     if (div) {
+        main.removeChild(div);
+        main.removeChild(video);
+
+    }
+    let arr = ['Website', '', 'Only Mobile Version Website', 'Everything is coded by me', '100% Vanila Javascript', '', '', '']
+
+    projectTemplate(arr, main)
+
+    createVideo(main, './img/KogeMap.mp4')
+    let icon = main.querySelector('.iconForProject');
+    icon.addEventListener('click', () => {
+        window.open('https://a-k-developer.github.io/KogeMap/')
+    })
+
 }
 const scrollToDiv = (id) => {
     const element = document.getElementById(id);
@@ -335,10 +399,12 @@ function createSecondProject() {
     projects[0].style.color = '#8892b0'
     projects[1].style.color = '#64ffda'
     projects[2].style.color = '#8892b0'
+    projects[3].style.color = '#8892b0'
+    projects[4].style.color = '#8892b0'
 
-    left.style.width = '30.33%';
-    middle.style.width = '36.33%'
-    right.style.width = '34.33%';
+    left.style.width = '15%';
+    middle.style.width = '25%'
+    right.style.width = '60%';
 
     let div = main.querySelector('div');
     let video = main.querySelector('video')
@@ -363,9 +429,12 @@ function createThirthProject() {
     projects[0].style.color = '#8892b0'
     projects[1].style.color = '#8892b0'
     projects[2].style.color = '#64ffda'
-    left.style.width = '67%';
-    middle.style.width = '33%'
-    right.style.width = '0';
+    projects[3].style.color = '#8892b0'
+    projects[4].style.color = '#8892b0'
+
+    left.style.width = '40%';
+    middle.style.width = '25%'
+    right.style.width = '35%';
 
     let div = main.querySelector('div');
     let video = main.querySelector('video')
@@ -450,7 +519,7 @@ function scrollNav() {
 
         }
         lastScroll = currentScroll;
-        
+
     })
 }
 scrollNav()
@@ -486,7 +555,7 @@ if (screen.width > 700) {
 
 
 } else {
-    
+
 }
 let socialContainer = Array.from(document.getElementById('socialNetworks').children);
 
@@ -552,17 +621,17 @@ email.addEventListener('click', () => {
 
 })
 let body = document.getElementsByTagName('body')[0]
-function makeNiceParagraph(body){
+function makeNiceParagraph(body) {
     let parragraphs = body.querySelectorAll('p');
-    
-    
-    for(let i = 0; i < parragraphs.length; i++){
+
+
+    for (let i = 0; i < parragraphs.length; i++) {
         let oneSec = parragraphs[i].textContent
-        for(let y = 0; y< oneSec.length; y++){
+        for (let y = 0; y < oneSec.length; y++) {
         }
-        
-      
-    }   
+
+
+    }
 
 
 }
